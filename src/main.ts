@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors"
 import bodyParser from "body-parser";
 import fs from "fs";
+import {Song} from "./models/Song";
 
 export const app = express();
 app.use(bodyParser.json());
@@ -21,7 +22,8 @@ const options: cors.CorsOptions = {
 app.use(cors(options));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const path: string = "src/resources/banks.json";
+const path: string = "src/resources/songs.json";
+let songsList: Song[]
 
 export const readFileMiddleware = (_: express.Request, __: express.Response, next: express.NextFunction) => {
   readFile();
@@ -38,10 +40,14 @@ export const readFile = () => {
 
 export const writeToFile = () => {
   try {
-    fs.writeFileSync(path, JSON.stringify("inserisiamo il file da scrivere", null, 2))
+    fs.writeFileSync(path, JSON.stringify("Inseriamo il file da scrivere", null, 2))
   } catch (err) {
     console.error(err);
   }
+}
+
+export const showSongs = () => {
+
 }
 
 
