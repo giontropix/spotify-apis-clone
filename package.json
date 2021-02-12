@@ -1,0 +1,31 @@
+{
+  "name": "spotify-apis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node ./build/main.js",
+    "dev": "nodemon --ignore resources/banks.json src/main.ts",
+    "test": "mocha -r ts-node/register src/test/*.test.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/chai": "^4.2.15",
+    "@types/cors": "^2.8.9",
+    "@types/express": "^4.17.11",
+    "@types/mocha": "^8.2.0",
+    "@types/supertest": "^2.0.10",
+    "body-parser": "^1.19.0",
+    "chai": "^4.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "mocha": "^8.3.0",
+    "supertest": "^6.1.3"
+  }
+}
