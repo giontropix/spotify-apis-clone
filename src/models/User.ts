@@ -6,7 +6,8 @@ export class User {
         private password: string,
         private playlist: Playlist[] = [],
         private followers: User[] = [],
-        private following: User[] = []) {}
+        private following: User[] = []
+    ) {}
 
     public getUser_name = (): string => this.user_name
     public getPassword = (): string => this.password

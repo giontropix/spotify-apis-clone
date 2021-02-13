@@ -3,7 +3,7 @@ import cors from "cors"
 import bodyParser from "body-parser";
 import redis from "redis";
 import {Song} from "./models/Song";
-import { users } from "./routes/users";
+import { auth } from "./routes/auth";
 
 export const app = express();
 app.use(bodyParser.json());
@@ -23,9 +23,9 @@ const options: cors.CorsOptions = {
 app.use(cors(options));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const client = redis.createClient(); //CREO UN CLIENT PER POTER COMUNICARE COL DB REDIS
-client.on("error", function (error) { //AVVIO IL COLLEGAMENTO COL DB REDIS
-  console.error(error); //SE NEL COLLEGARMI HO PROBLEMI LI STAMPO
+const client = redis.createClient();
+client.on("error", function (error) {
+  console.error(error);
 });
 
 const path: string = "src/resources/songs.json";
@@ -33,5 +33,5 @@ let songsList: Song[]
 
 export const showSongs = () => {}
 
-app.use("/spotify", users);
+app.use("/", auth);
 app.listen(3000, () => console.log("Server started"));
