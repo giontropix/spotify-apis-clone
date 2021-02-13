@@ -25,16 +25,17 @@ router.post("/register/", body("mail").exists().isEmail().normalizeEmail(), body
 
 router.get("/login/", header("mail").exists().isEmail().normalizeEmail(), header("password").notEmpty().isString(), handleErrors, async ({headers: {token = "", mail, password} }, res) => {
     if(await client.getAsync(token) !== null) return res.status(400).json({error: "user already logged"})
-    const {user_name, user_password, data} = await client.hgetallAsync(mail);
-    const {playlist, follower, following} = JSON.parse(data);
-    const user: User = new User(user_name, user_password, playlist, follower, following);
+    const user = await client.hgetallAsync(mail);
     if(user === null) return res.status(404).json({error: "user not found"})
-    if(user.getPassword() !== hash(password as string).toString()) return res.status(401).json({error: "Invalid password"})
-    const accessToken = tokgen.generate();
-    client.set(accessToken, JSON.stringify(mail), 'EX', 86400, redis.print);
-    const refreshToken = tokgen.generate();
-    client.set(refreshToken, JSON.stringify(mail), 'EX', 86400*7, redis.print);
-    return res.status(201).json({ message: "login done", mail, user_name: user.getUser_name(), accessToken, refreshToken })
+    const {user_name, user_password/*, data*/} = user;
+    //const {playlist, follower, following} = JSON.parse(data);
+    //const user: User = new User(user_name, user_password, playlist, follower, following);
+    if(user_password !== hash(password as string).toString()) return res.status(401).json({error: "Invalid password"})
+    const access_token = tokgen.generate();
+    client.set(access_token, JSON.stringify(mail), 'EX', 86400, redis.print);
+    const refresh_token = tokgen.generate();
+    client.set(refresh_token, JSON.stringify(mail), 'EX', 86400*7, redis.print);
+    return res.status(201).json({ message: "login done", mail, user_name, access_token, refresh_token })
 })
 
 router.delete("/logout/", async ({ headers: { access_token, refresh_token } }, res) =>{
