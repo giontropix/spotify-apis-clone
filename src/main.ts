@@ -1,8 +1,9 @@
 import express from "express";
 import cors from "cors"
 import bodyParser from "body-parser";
-import fs from "fs";
+import redis from "redis";
 import {Song} from "./models/Song";
+import { users } from "./routes/users";
 
 export const app = express();
 app.use(bodyParser.json());
@@ -22,34 +23,15 @@ const options: cors.CorsOptions = {
 app.use(cors(options));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const client = redis.createClient(); //CREO UN CLIENT PER POTER COMUNICARE COL DB REDIS
+client.on("error", function (error) { //AVVIO IL COLLEGAMENTO COL DB REDIS
+  console.error(error); //SE NEL COLLEGARMI HO PROBLEMI LI STAMPO
+});
+
 const path: string = "src/resources/songs.json";
 let songsList: Song[]
 
-export const readFileMiddleware = (_: express.Request, __: express.Response, next: express.NextFunction) => {
-  readFile();
-  if(next) next();
-}
+export const showSongs = () => {}
 
-export const readFile = () => {
-  try {
-    const data = fs.readFileSync(path, "utf8");
-  } catch(err) {
-    if (err) return console.error(err)
-  }
-}
-
-export const writeToFile = () => {
-  try {
-    fs.writeFileSync(path, JSON.stringify("Inseriamo il file da scrivere", null, 2))
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-export const showSongs = () => {
-
-}
-
-
-//app.use("/banks", readFileMiddleware, banks);
+app.use("/spotify", users);
 app.listen(3000, () => console.log("Server started"));
