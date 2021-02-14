@@ -1,26 +1,34 @@
 [
   {
-    "id": 0,
-    "user_name": "Turi",
-    "mail": "turidogiappuni@mail.it",
-    "playlist": [],
-    "followers": [],
-    "following": []
+    "_id": "0",
+    "_user_name": "Turi",
+    "_mail": "turidogiappuni@mail.it",
+    "_playlist": [],
+    "_followers": [],
+    "_following": []
   },
   {
-    "id": 1,
-    "user_name": "Maggiordomo",
-    "mail": "aula145@mail.it",
-    "playlist": [],
-    "followers": [],
-    "following": []
+    "_id": "1",
+    "_user_name": "Maggiordomo",
+    "_mail": "aula145@mail.it",
+    "_playlist": [],
+    "_followers": [],
+    "_following": []
   },
   {
-    "id": 2,
-    "user_name": "Pastore",
-    "mail": "ilpastore@mail.it",
-    "playlist": [],
-    "followers": [],
-    "following": []
+    "_id": "2",
+    "_user_name": "Pastore",
+    "_mail": "ilpastore@mail.it",
+    "_playlist": [],
+    "_followers": [],
+    "_following": []
+  },
+  {
+    "_id": "U1613322063927",
+    "_user_name": "Paolo",
+    "_mail": "paolo@mail.it",
+    "_playlist": [],
+    "_followers": [],
+    "_following": []
   }
 ]

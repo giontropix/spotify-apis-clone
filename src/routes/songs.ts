@@ -4,11 +4,6 @@ import {songsList, readFileMiddleware, writeToFile} from "../utils/manageSongsFr
 import {Song} from "../models/Song";
 
 const router = express.Router();
-export const handleErrors = (req: Request, res: Response, next: NextFunction) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) return res.status(400).json(errors);
-    else next();
-};
 
 router.get("/", readFileMiddleware, (_:Request, res:Response) => res.status(200).json(songsList) )
 
