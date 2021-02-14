@@ -6,5 +6,21 @@
     "length": 2.30,
     "artist": "Brigantony",
     "genre": "Folk popolare"
+  },
+  {
+    "id": 1,
+    "title": "A zita pilusa",
+    "views": 50000,
+    "length": 3.55,
+    "artist": "Brigantony",
+    "genre": "Folk popolare"
+  },
+  {
+    "id": 2,
+    "title": "Occhi a pampina",
+    "views": 40000,
+    "length": 4.44,
+    "artist": "Tinturia",
+    "genre": "Folk popolare"
   }
 ]

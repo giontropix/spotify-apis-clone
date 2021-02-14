@@ -2,7 +2,12 @@ import {Song} from "./Song";
 import {User} from "./User";
 
 export class Playlist {
-    constructor(private id:number, private title:string, private songs:Song[] = [], private length:number,private owner:User){}
+    constructor(private id:number,
+                private title:string,
+                private songs:Song[] = [],
+                private length:number,
+                private owner:User
+    ){}
 
     public getId = (): number => this.id
     public getTitle = (): string => this.title

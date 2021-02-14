@@ -1,5 +1,9 @@
 export class Album {
-    constructor(private id:number, private title:string, private year:number, private genre:string){}
+    constructor(private id:number,
+                private title:string,
+                private year:number,
+                private genre:string
+    ){}
 
     public getId = (): number => this.id;
     public getTitle = (): string => this.title;

@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import redis from "redis";
 import {Song} from "./models/Song";
 import { auth } from "./routes/auth";
+import {songs} from "./routes/songs";
 
 export const app = express();
 app.use(bodyParser.json());
@@ -28,10 +29,6 @@ client.on("error", function (error) {
   console.error(error);
 });
 
-const path: string = "src/resources/songs.json";
-let songsList: Song[]
-
-export const showSongs = () => {}
-
 app.use("/", auth);
+app.use("/songs", songs)
 app.listen(3000, () => console.log("Server started"));
