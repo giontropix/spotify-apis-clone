@@ -19,7 +19,7 @@ export const handleErrors = (req: express.Request, res: express.Response, next: 
 router.post("/register/", body("mail").exists().isEmail().normalizeEmail(), body("user_name").exists().notEmpty().isString().trim().escape(), body("password").exists().isString().isLength({ min: 4 }), handleErrors, async ({ body: { mail, user_name, password } }, res) => {
     if(await client.hgetallAsync(mail) !== null) return res.status(403).json({error: "user already exists"})
     const newUser: User = new User(user_name, hash(password).toString());
-    client.hmset(mail, {"user_name": newUser.getUser_name(), "user_password": newUser.getPassword(), "data": JSON.stringify({"playlist": newUser.getFollowers(), "follower": newUser.getFollowers(), "following": newUser.getFollowing()})})
+    client.hmset(mail, {"user_name": newUser.user_name, "user_password": newUser.getPassword(), "data": JSON.stringify({"playlist": newUser.playlist, "follower": newUser.followers, "following": newUser.following})})
     return res.status(201).json({ message: "user successfully registered", user: {user_name, mail} });
 });
 
