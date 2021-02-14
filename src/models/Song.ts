@@ -1,13 +1,12 @@
 export class Song {
-    constructor(private _id: string,
-                private _title: string,
-                private _views: number,
-                private _ranking: number,
-                private _votes: any[] = [],
-                private _length: number,
-                private _artist: string,
-                private _genre: string,
-                private _album?: string
+    constructor(
+        private _id: string,
+        private _title: string,
+        private _views: number,
+        private _length: number,
+        private _artist: string,
+        private _genre: string,
+        private _album?: string
     ) {
     }
 
@@ -33,22 +32,6 @@ export class Song {
 
     set views(value: number) {
         this._views = value;
-    }
-
-    get ranking(): number {
-        return this._ranking;
-    }
-
-    set ranking(value: number) {
-        this._ranking = value;
-    }
-
-    get votes(): any[] {
-        return this._votes;
-    }
-
-    set votes(value: any[]) {
-        this._votes = value;
     }
 
     get length(): number {

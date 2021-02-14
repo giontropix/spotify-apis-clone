@@ -1,26 +1,26 @@
 [
   {
-    "id": "0",
-    "title": "Mi stuppai na fanta",
-    "views": 40000,
-    "length": 2.30,
-    "artist": "Brigantony",
-    "genre": "Folk popolare"
+    "_id": "0",
+    "_title": "Mi stuppai na fanta",
+    "_views": 40000,
+    "_length": 2.30,
+    "_artist": "Brigantony",
+    "_genre": "Folk popolare"
   },
   {
-    "id": "1",
-    "title": "A zita pilusa",
-    "views": 50000,
-    "length": 3.55,
-    "artist": "Brigantony",
-    "genre": "Folk popolare"
+    "_id": "1",
+    "_title": "A zita pilusa",
+    "_views": 50000,
+    "_length": 3.55,
+    "_artist": "Brigantony",
+    "_genre": "Folk popolare"
   },
   {
-    "id": "2",
-    "title": "Occhi a pampina",
-    "views": 40000,
-    "length": 4.44,
-    "artist": "Tinturia",
-    "genre": "Folk popolare"
+    "_id": "2",
+    "_title": "Occhi a pampina",
+    "_views": 40000,
+    "_length": 4.44,
+    "_artist": "Tinturia",
+    "_genre": "Folk popolare"
   }
 ]

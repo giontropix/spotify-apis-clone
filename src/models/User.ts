@@ -1,4 +1,5 @@
 import {Playlist} from "./Playlist";
+import {Follower} from "./Follower";
 
 export class User {
     constructor(
@@ -6,8 +7,8 @@ export class User {
         private _user_name: string,
         private _mail: string,
         private _playlist: Playlist[] = [],
-        private _followers: User[] = [],
-        private _following: User[] = []
+        private _followers: Follower[] = [],
+        private _following: Follower[] = []
     ) {
     }
 
@@ -43,19 +44,19 @@ export class User {
         this._playlist = value;
     }
 
-    get followers(): User[] {
+    get followers(): Follower[] {
         return this._followers;
     }
 
-    set followers(value: User[]) {
+    set followers(value: Follower[]) {
         this._followers = value;
     }
 
-    get following(): User[] {
+    get following(): Follower[] {
         return this._following;
     }
 
-    set following(value: User[]) {
+    set following(value: Follower[]) {
         this._following = value;
     }
 }

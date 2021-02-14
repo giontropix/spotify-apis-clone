@@ -2,10 +2,10 @@ import express from "express";
 import cors from "cors"
 import bodyParser from "body-parser";
 import redis from "redis";
-import {Song} from "./models/Song";
-import { auth } from "./routes/auth";
+import {auth} from "./routes/auth";
 import {songs} from "./routes/songs";
 import {users} from "./routes/users";
+import {readFileMiddleware} from "./utils/manageUsersFromJSON";
 
 export const app = express();
 app.use(bodyParser.json());
@@ -32,5 +32,5 @@ client.on("error", function (error) {
 
 app.use("/", auth);
 app.use("/songs", songs)
-app.use("/users", users)
+app.use("/users", readFileMiddleware, users)
 app.listen(3000, () => console.log("Server started"));
