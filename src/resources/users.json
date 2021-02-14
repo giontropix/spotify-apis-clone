@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "user_name": "Turi",
+    "mail": "turidogiappuni@mail.it",
+    "playlist": [],
+    "followers": [],
+    "following": []
+  },
+  {
+    "id": 1,
+    "user_name": "Maggiordomo",
+    "mail": "aula145@mail.it",
+    "playlist": [],
+    "followers": [],
+    "following": []
+  },
+  {
+    "id": 2,
+    "user_name": "Pastore",
+    "mail": "ilpastore@mail.it",
+    "playlist": [],
+    "followers": [],
+    "following": []
+  }
+]
