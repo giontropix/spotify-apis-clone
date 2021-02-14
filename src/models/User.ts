@@ -2,23 +2,60 @@ import {Playlist} from "./Playlist";
 
 export class User {
     constructor(
-        private user_name: string,
-        private password: string,
-        private playlist: Playlist[] = [],
-        private followers: User[] = [],
-        private following: User[] = []
-    ) {}
+        private _id: string,
+        private _user_name: string,
+        private _mail: string,
+        private _playlist: Playlist[] = [],
+        private _followers: User[] = [],
+        private _following: User[] = []
+    ) {
+    }
 
-    public getUser_name = (): string => this.user_name
-    public getPassword = (): string => this.password
-    public getPlaylist = (): Playlist[] => this.playlist
-    public getFollowers = (): User[] => this.followers
-    public getFollowing = (): User[] => this.following
+    get id(): string {
+        return this._id;
+    }
 
-    public setUser_name = (value: string): string => (this.user_name = value)
-    public setPassword = (value: string): string => (this.password = value)
-    public setPlaylist = (value: Playlist[]): Playlist[] => (this.playlist = value)
-    public setFollowers = (value: User[]): User[] => (this.followers = value)
-    public setFollowing = (value: User[]): User[] => (this.following = value)
+    set id(value: string) {
+        this._id = value;
+    }
 
+    get user_name(): string {
+        return this._user_name;
+    }
+
+    set user_name(value: string) {
+        this._user_name = value;
+    }
+
+    get mail(): string {
+        return this._mail;
+    }
+
+    set mail(value: string) {
+        this._mail = value;
+    }
+
+    get playlist(): Playlist[] {
+        return this._playlist;
+    }
+
+    set playlist(value: Playlist[]) {
+        this._playlist = value;
+    }
+
+    get followers(): User[] {
+        return this._followers;
+    }
+
+    set followers(value: User[]) {
+        this._followers = value;
+    }
+
+    get following(): User[] {
+        return this._following;
+    }
+
+    set following(value: User[]) {
+        this._following = value;
+    }
 }

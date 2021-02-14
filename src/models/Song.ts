@@ -1,29 +1,85 @@
 export class Song {
-    constructor(public id: number,
-                public title: string,
-                public views: number,
-                public ranking: number,
-                public votes: any[] = [],
-                public length: number,
-                public artist: string,
-                public genre: string,
-                public album?: string
-    ){}
+    constructor(private _id: string,
+                private _title: string,
+                private _views: number,
+                private _ranking: number,
+                private _votes: any[] = [],
+                private _length: number,
+                private _artist: string,
+                private _genre: string,
+                private _album?: string
+    ) {
+    }
 
-    public getId = (): number => this.id
-    public getTitle = (): string => this.title
-    public getViews = (): number => this.views
-    public getLength = (): number => this.length
-    public getGenre = (): string => this.genre
-    public getArtist = (): string => this.artist
-    //? mi da errore perché potrebbe essere undefined public getAlbum = (): Album => this.album
+    get id(): string {
+        return this._id;
+    }
 
-    public setId = (): number => this.id
-    public setTitle = (value:string): string => (this.title = value)
-    public setViews = (value:number): number => (this.views = value)
-    public setLength = (value:number): number => (this.length = value)
-    public setGenre = (value:string): string => (this.genre = value)
-    public setArtist = (value:string): string => (this.artist = value)
-    public setAlbum = (value:string): string => (this.album = value)
+    set id(value: string) {
+        this._id = value;
+    }
 
+    get title(): string {
+        return this._title;
+    }
+
+    set title(value: string) {
+        this._title = value;
+    }
+
+    get views(): number {
+        return this._views;
+    }
+
+    set views(value: number) {
+        this._views = value;
+    }
+
+    get ranking(): number {
+        return this._ranking;
+    }
+
+    set ranking(value: number) {
+        this._ranking = value;
+    }
+
+    get votes(): any[] {
+        return this._votes;
+    }
+
+    set votes(value: any[]) {
+        this._votes = value;
+    }
+
+    get length(): number {
+        return this._length;
+    }
+
+    set length(value: number) {
+        this._length = value;
+    }
+
+    get artist(): string {
+        return this._artist;
+    }
+
+    set artist(value: string) {
+        this._artist = value;
+    }
+
+    get genre(): string {
+        return this._genre;
+    }
+
+    set genre(value: string) {
+        this._genre = value;
+    }
+
+    get album(): string | undefined {
+        return this._album;
+    }
+
+    set album(value: string | undefined) {
+        this._album = value;
+    }
 }

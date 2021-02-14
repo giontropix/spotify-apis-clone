@@ -1,25 +1,34 @@
 import {Song} from "./Song";
-import {User} from "./User";
 
 export class Playlist {
-    constructor(private id:number,
-                private title:string,
-                private songs:Song[] = [],
-                private length:number,
-                private owner:User
-    ){}
-
-    public getId = (): number => this.id
-    public getTitle = (): string => this.title
-    public getSongs = (): Song[] => this.songs
-    public getLength = (): number => this.length
-    public getOwner = (): User => this.owner
-
-    public setId = (value:number): number => (this.id = value)
-    public setTitle = (value:string): string => (this.title = value)
-    public setSongs = (value:Song[]): Song[] => (this.songs = value)
-    public setLength = (value:number): number => (this.length = value)
-    public setOwner = (value:User): User => (this.owner = value)
+    constructor(private _id: string,
+                private _title: string,
+                private _songs: Song[] = [],
+    ) {
+    }
 
 
+    get id(): string {
+        return this._id;
+    }
+
+    set id(value: string) {
+        this._id = value;
+    }
+
+    get title(): string {
+        return this._title;
+    }
+
+    set title(value: string) {
+        this._title = value;
+    }
+
+    get songs(): Song[] {
+        return this._songs;
+    }
+
+    set songs(value: Song[]) {
+        this._songs = value;
+    }
 }
