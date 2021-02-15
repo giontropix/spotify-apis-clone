@@ -17,6 +17,11 @@ router.get('/song/authors', readSongsFileMiddleware, (_:Request, res:Response) =
     authorsList && res.status(200).json(authorsList) || res.status(404).json({message: "No artists found!"})
 })
 
+router.get('/genres/:genre_name', readSongsFileMiddleware, ({params: {genre_name}}:Request,res:Response) =>{
+    let genreSong = songsList.filter(({genre}:Song) => genre.toLowerCase() === genre_name.toLowerCase())
+    genreSong && res.status(200).json(genreSong) || res.status(404).json({message: "No artists found!"})
+})
+
 router.post('/', readSongsFileMiddleware,body('title').notEmpty().isString().toLowerCase(),body('views').isInt(),body('length').isFloat(),body('artist').notEmpty().toLowerCase().isString(),body('genre').exists().isString(),body('album').isString(),({body: {title,views, length,artist,genre,album}}:Request, res:Response)=>{
     songsList.push(new Song(`S${Date.now()}`, title, views, length, artist, genre, album))
     writeSongsToFile()
