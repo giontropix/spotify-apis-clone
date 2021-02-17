@@ -23,9 +23,10 @@ router.get('/genres/:genre_name', readSongsFileMiddleware, ({params: {genre_name
 })
 
 router.post('/', readSongsFileMiddleware,body('title').notEmpty().isString().toLowerCase(),body('views').isInt(),body('length').isFloat(),body('artist').notEmpty().toLowerCase().isString(),body('genre').exists().isString(),body('album').isString(),({body: {title,views, length,artist,genre,album}}:Request, res:Response)=>{
-    songsList.push(new Song(`S${Date.now()}`, title, views, length, artist, genre, album))
+    let id = Date.now()
+    songsList.push(new Song(`S${id}`, title, views, length, artist, genre, album))
     writeSongsToFile()
-    res.status(201).json({message: "Song added!"})
+    res.status(201).json({message: "Song added!", id: `S${id}`})
 })
 
 router.delete('/:id_song', readSongsFileMiddleware, ({params: {id_song}}:Request, res:Response) =>{
