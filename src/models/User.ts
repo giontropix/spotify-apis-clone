@@ -8,7 +8,7 @@ export class User {
         private _mail: string,
         private _playlist: Playlist[] = [],
         private _followers: Follower[] = [],
-        private _following: Follower[] = []
+        private _followed: Follower[] = []
     ) {
     }
 
@@ -52,11 +52,11 @@ export class User {
         this._followers = value;
     }
 
-    get following(): Follower[] {
-        return this._following;
+    get followed(): Follower[] {
+        return this._followed;
     }
 
-    set following(value: Follower[]) {
-        this._following = value;
+    set followed(value: Follower[]) {
+        this._followed = value;
     }
 }

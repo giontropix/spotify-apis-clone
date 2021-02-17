@@ -13,9 +13,9 @@ router.put("/followings", body('userIdToFollow').exists().isString(), handleErro
     if(!currentUser) return res.status(404).json({error: "User not found"})
     const userToFollow = listOfUsers.find((user: User) => user.id === userIdToFollow)
     if(!userToFollow) return res.status(404).json({error: "User not found"})
-    if(currentUser.following.find((item: Follower) => item.id === userToFollow.id))
+    if(currentUser.followed.find((item: Follower) => item.id === userToFollow.id))
         return res.status(400).json({error: "User just followed"})
-    currentUser.following.push(new Follower(userToFollow.id, userToFollow.user_name))
+    currentUser.followed.push(new Follower(userToFollow.id, userToFollow.user_name))
     userToFollow.followers.push(new Follower(currentUser.id, currentUser.user_name))
     writeToFile()
     res.status(201).json({message: "User followed", currentUser, userToFollow})
@@ -25,7 +25,7 @@ router.put("/followings", body('userIdToFollow').exists().isString(), handleErro
 router.get("/followings", ({params: {id}}: Request, res:Response) => {
     const currentUser = listOfUsers.find((user: User) => user.id === id)
     if(!currentUser) return res.status(404).json({error: "User not found"})
-    return res.status(200).json(currentUser.following);
+    return res.status(200).json(currentUser.followed);
 })
 
 //VEDERE DA CHI E' SEGUITO UN UTENTE
@@ -41,11 +41,11 @@ router.delete("/followings", body('userIdToUnfollow').exists().isString(), handl
     if(!currentUser) return res.status(404).json({error: "User not found"})
     const userToUnfollow = listOfUsers.find((user: User) => user.id === userIdToUnfollow)
     if(!userToUnfollow) return res.status(404).json({error: "User to unfollow not found"})
-    const userToUnfollowIndex = currentUser.following.findIndex((user: Follower) => user.id === userIdToUnfollow)
+    const userToUnfollowIndex = currentUser.followed.findIndex((user: Follower) => user.id === userIdToUnfollow)
     if(userToUnfollowIndex === -1) return res.status(404).json({error: "User to unfollow not found"})
     const currentUserIndex = userToUnfollow.followers.findIndex((user: Follower) => user.id === id)
     if(currentUserIndex === -1) return res.status(404).json({error: "User not found"})
-    currentUser.following.splice(userToUnfollowIndex, 1)
+    currentUser.followed.splice(userToUnfollowIndex, 1)
     userToUnfollow.followers.splice(currentUserIndex, 1)
     writeToFile()
     return res.status(201).json({message: "User unfollower", currentUser, userToUnfollow})

@@ -62,7 +62,7 @@ router.put("/:idPlaylist/songs", readSongsFileMiddleware, body("songId").notEmpt
 })
 
 //RIMUOVI CANZONE DA PLAYLIST
-router.delete("/:idPlaylist/songs", body("songId").notEmpty().isString(), handleErrors, ({params:{ id, idPlaylist },body:{ songId } }:Request, res:Response) => {
+router.delete("/:idPlaylist/songs/:songId", ({params:{ id, idPlaylist, songId }}:Request, res:Response) => {
     const currentUser = listOfUsers.find((user:User) => user.id === id)
     if(!currentUser) return res.status(404).json({error: "User not found"})
     const playlist = currentUser.playlist.find((playlist: Playlist) => playlist.id === idPlaylist)

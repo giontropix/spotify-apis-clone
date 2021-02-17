@@ -12,7 +12,7 @@ router.get('/:id_song', readSongsFileMiddleware, ({params: {id_song}}:Request, r
     songById && res.status(200).json(songById) || res.status(404).json({message: "Song not found!"})
 })
 
-router.get('/song/authors', readSongsFileMiddleware, (_:Request, res:Response) => {
+router.get('/authors', readSongsFileMiddleware, (_:Request, res:Response) => {
     let authorsList:string[] = songsList.map(({artist}) => artist).filter((x:string,i:number,authorsList:string[]) => authorsList.indexOf(x) === i)
     authorsList && res.status(200).json(authorsList) || res.status(404).json({message: "No artists found!"})
 })
