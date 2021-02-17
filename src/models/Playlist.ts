@@ -7,7 +7,6 @@ export class Playlist {
     ) {
     }
 
-
     get id(): string {
         return this._id;
     }

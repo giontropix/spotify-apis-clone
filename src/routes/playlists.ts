@@ -38,7 +38,7 @@ router.get("/:playlistId", ({params:{id, playlistId}}:Request, res:Response) => 
 })
 
 //ELIMINARE UNA PLAYLIST
-router.delete("/", body('playlistId').exists().isString(),handleErrors, ({params:{id}, body:{playlistId}}: Request, res:Response) => {
+router.delete("/:playlistId", ({params:{id, playlistId}}: Request, res:Response) => {
     const currentUser = listOfUsers.find((user: User) => user.id === id)
     if(!currentUser) return res.status(404).json({error: "User not found"})
     const playlistIndex = currentUser.playlist.findIndex((playlist: Playlist) => playlist.id === playlistId)

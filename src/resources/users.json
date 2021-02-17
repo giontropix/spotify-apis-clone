@@ -30,10 +30,68 @@
     "_following": []
   },
   {
-    "_id": "U1613322063927",
+    "_id": "U1613403596536",
     "_user_name": "Paolo",
     "_mail": "paolo@mail.it",
-    "_playlist": [],
+    "_playlist": [
+      {
+        "_id": "P1613381339735",
+        "_title": "Relax Music",
+        "_songs": []
+      },
+      {
+        "_id": "P1613381133321",
+        "_title": "Summer2020",
+        "_songs": [
+          {
+            "_id": "0",
+            "_title": "Mi stuppai na fanta",
+            "_views": 40000,
+            "_length": 2.3,
+            "_artist": "Brigantony",
+            "_genre": "Folk popolare"
+          },
+          {
+            "_id": "1",
+            "_title": "A zita pilusa",
+            "_views": 50000,
+            "_length": 3.55,
+            "_artist": "Brigantony",
+            "_genre": "Folk popolare"
+          },
+          {
+            "_id": "2",
+            "_title": "Occhi a pampina",
+            "_views": 40000,
+            "_length": 4.44,
+            "_artist": "Tinturia",
+            "_genre": "Folk popolare"
+          },
+          {
+            "_id": "3",
+            "_title": "Nopakytoman",
+            "_views": 40000,
+            "_length": 3.59,
+            "_artist": "Brigantiny",
+            "_genre": "Rock"
+          },
+          {
+            "_id": "4",
+            "_title": "Animals",
+            "_views": 30,
+            "_length": 1.3,
+            "_artist": "Martin Garrix",
+            "_genre": "EDM",
+            "_album": "Singolo"
+          }
+        ]
+      },
+      {
+        "_id": "P1613383439731",
+        "_title": "With Love",
+        "_songs": []
+      }
+    ],
     "_followers": [],
     "_following": []
   }
