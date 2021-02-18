@@ -9,13 +9,11 @@ const router = express.Router({mergeParams: true});
 router.use("/:id/playlists", playlists)
 router.use("/:id", followers)
 
-router.get("/", (_: Request, res: Response) => {
-    return res.status(200).json(listOfUsers);
-})
+router.get("/", (_: Request, res: Response) => res.status(200).json(listOfUsers))
 
 router.get("/:id", ({params: {id}}, res: Response) => {
     const user = listOfUsers.find((user: User) => user.id === id)
-    if (!user) return res.status(404).json({error: "User not found"})
+    !user && res.status(404).json({error: "User not found"})
     res.status(201).json(user);
 })
 

@@ -48,7 +48,7 @@ router.delete("/followed/:userIdToUnfollow", ({params:{id, userIdToUnfollow}}:Re
     currentUser.followed.splice(userToUnfollowIndex, 1)
     userToUnfollow.followers.splice(currentUserIndex, 1)
     writeToFile()
-    return res.status(201).json({message: "User unfollower", currentUser, userToUnfollow})
+    return res.status(201).json({message: "User unfollowed", currentUser, userToUnfollow})
 })
 
 export {router as followers}
