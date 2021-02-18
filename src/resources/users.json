@@ -4,12 +4,7 @@
     "_user_name": "Turi",
     "_mail": "turidogiappuni@mail.it",
     "_playlist": [],
-    "_followers": [
-      {
-        "_id": "U1613583743602",
-        "_user_name": "Emily"
-      }
-    ],
+    "_followers": [],
     "_followed": []
   },
   {
@@ -17,12 +12,7 @@
     "_user_name": "Maggiordomo",
     "_mail": "aula145@mail.it",
     "_playlist": [],
-    "_followers": [
-      {
-        "_id": "U1613583743602",
-        "_user_name": "Emily"
-      }
-    ],
+    "_followers": [],
     "_followed": []
   },
   {
@@ -30,12 +20,7 @@
     "_user_name": "Pastore",
     "_mail": "ilpastore@mail.it",
     "_playlist": [],
-    "_followers": [
-      {
-        "_id": "U1613583743602",
-        "_user_name": "Emily"
-      }
-    ],
+    "_followers": [],
     "_followed": []
   },
   {
@@ -43,29 +28,7 @@
     "_user_name": "Emily",
     "_mail": "emily@mail.it",
     "_playlist": [],
-    "_followers": [
-      {
-        "_id": "U1613583743602",
-        "_user_name": "Emily"
-      }
-    ],
-    "_followed": [
-      {
-        "_id": "0",
-        "_user_name": "Turi"
-      },
-      {
-        "_id": "1",
-        "_user_name": "Maggiordomo"
-      },
-      {
-        "_id": "2",
-        "_user_name": "Pastore"
-      },
-      {
-        "_id": "U1613583743602",
-        "_user_name": "Emily"
-      }
-    ]
+    "_followers": [],
+    "_followed": []
   }
 ]

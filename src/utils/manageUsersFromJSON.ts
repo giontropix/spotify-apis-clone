@@ -24,7 +24,7 @@ export const readFile = () => {
                 }))
             }), user._followers.map((foll: any) => {
                 if(foll) return new Follower(foll._id, foll._user_name)
-            }), user._following.map((foll: any) => {
+            }), user._followed.map((foll: any) => {
                 if(foll) return new Follower(foll._id, foll._user_name)
             }))
         );

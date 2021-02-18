@@ -36,7 +36,7 @@ router.get("/followers", ({params: {id}}: Request, res:Response) => {
 })
 
 //SMETTERE DI SEGUIRE UN UTENTE
-router.delete("/followed", ({params:{id, userIdToUnfollow}}:Request, res: Response) => {
+router.delete("/followed/:userIdToUnfollow", ({params:{id, userIdToUnfollow}}:Request, res: Response) => {
     const currentUser = listOfUsers.find((user: User) => user.id === id)
     if(!currentUser) return res.status(404).json({error: "User not found"})
     const userToUnfollow = listOfUsers.find((user: User) => user.id === userIdToUnfollow)
