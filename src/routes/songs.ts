@@ -12,6 +12,15 @@ router.get('/:id_song', readSongsFileMiddleware, ({params: {id_song}}:Request, r
     songById && res.status(200).json(songById) || res.status(404).json({message: "Song not found!"})
 })
 
+router.get('/search/filter', readSongsFileMiddleware, ({query:{title, artist}}:Request, res:Response) => {
+    let songSearch:Song | Song[] | undefined = songsList.filter((songs:Song) => {
+        if ( (songs.title.toLowerCase() === String(title).toLowerCase() || songs.artist.toLowerCase() === String(artist).toLowerCase()) ||
+            songs.title.toLowerCase() && songs.artist.toLowerCase() === String(title).toLowerCase() && String(artist).toLowerCase())
+            return songs
+    })
+    songSearch && res.status(200).json(songSearch)
+})
+
 router.get('/authors', readSongsFileMiddleware, (_:Request, res:Response) => {
     let authorsList:string[] = songsList.map(({artist}) => artist).filter((x:string,i:number,authorsList:string[]) => authorsList.indexOf(x) === i)
     authorsList && res.status(200).json(authorsList) || res.status(404).json({message: "No artists found!"})
