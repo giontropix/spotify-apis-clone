@@ -8,7 +8,7 @@ import {Follower} from "../models/Follower";
 
 const router = express.Router({mergeParams: true});
 
-router.put("/followings", body('userIdToFollow').exists().isString(), handleErrors, ({body: {userIdToFollow}, params:{id}}, res: Response) => {
+router.put("/followed", body('userIdToFollow').exists().isString(), handleErrors, ({body: {userIdToFollow}, params:{id}}, res: Response) => {
     const currentUser = listOfUsers.find((user: User) => user.id === id)
     if(!currentUser) return res.status(404).json({error: "User not found"})
     const userToFollow = listOfUsers.find((user: User) => user.id === userIdToFollow)
@@ -22,7 +22,7 @@ router.put("/followings", body('userIdToFollow').exists().isString(), handleErro
 })
 
 //VEDERE CHI SEGUE UN UTENTE
-router.get("/followings", ({params: {id}}: Request, res:Response) => {
+router.get("/followed", ({params: {id}}: Request, res:Response) => {
     const currentUser = listOfUsers.find((user: User) => user.id === id)
     if(!currentUser) return res.status(404).json({error: "User not found"})
     return res.status(200).json(currentUser.followed);
@@ -36,7 +36,7 @@ router.get("/followers", ({params: {id}}: Request, res:Response) => {
 })
 
 //SMETTERE DI SEGUIRE UN UTENTE
-router.delete("/followings", body('userIdToUnfollow').exists().isString(), handleErrors, ({body: {userIdToUnfollow}, params:{id}}:Request, res: Response) => {
+router.delete("/followed", body('userIdToUnfollow').exists().isString(), handleErrors, ({body: {userIdToUnfollow}, params:{id}}:Request, res: Response) => {
     const currentUser = listOfUsers.find((user: User) => user.id === id)
     if(!currentUser) return res.status(404).json({error: "User not found"})
     const userToUnfollow = listOfUsers.find((user: User) => user.id === userIdToUnfollow)
