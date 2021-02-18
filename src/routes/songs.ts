@@ -15,8 +15,8 @@ router.get('/:id_song', readSongsFileMiddleware, ({params: {id_song}}:Request, r
 router.get('/', readSongsFileMiddleware, ({query:{filter}}:Request, res:Response) => {
     if(filter){
         let songSearch:Song | Song[] | undefined = songsList.filter((songs:Song) => {
-            if (songs.title.toLowerCase() === String(filter).toLowerCase() ||
-                songs.artist.toLowerCase() === String(filter).toLowerCase()) return songs
+            if (songs.title.toLowerCase().includes(String(filter).toLowerCase())  ||
+                songs.artist.toLowerCase().includes(String(filter).toLowerCase())) return songs
         })
         songSearch && res.status(200).json(songSearch) || res.status(404).json({message: "Error"})
     }else res.status(200).json(songsList)

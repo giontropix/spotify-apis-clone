@@ -27,7 +27,22 @@
     "_id": "U1613583743602",
     "_user_name": "Emily",
     "_mail": "emily@mail.it",
-    "_playlist": [],
+    "_playlist": [
+      {
+        "_id": "P1613663820280",
+        "_title": "test",
+        "_songs": [
+          {
+            "_id": "0",
+            "_title": "Mi stuppai na fanta",
+            "_views": 40000,
+            "_length": 2.3,
+            "_artist": "Brigantony",
+            "_genre": "Folk popolare"
+          }
+        ]
+      }
+    ],
     "_followers": [],
     "_followed": []
   }
