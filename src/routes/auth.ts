@@ -6,11 +6,13 @@ import hash from "string-hash";
 import {TokenBase, TokenGenerator} from 'ts-token-generator';
 import {listOfUsers, readFileMiddleware, writeToFile} from "../utils/manageUsersFromJSON";
 import {User} from "../models/User";
-import {handleErrors} from "../utils/apisHelpers";
+import {checkExpiredToken, handleErrors} from "../utils/apisHelpers";
 
 const router = express.Router();
 const client: any = bluebird.promisifyAll(redis.createClient());
 const tokgen = new TokenGenerator({bitSize: 512, baseEncoding: TokenBase.BASE62});
+
+router.get("/check/", checkExpiredToken);
 
 router.post("/register/", readFileMiddleware, body("mail").isEmail().normalizeEmail(), body("user_name").notEmpty().isString().trim().escape(), body("password").exists().isString().isLength({ min: 4 }), handleErrors, async ({ body: { mail, user_name, password } }, res) => {
     if(await client.hgetallAsync(mail) !== null) return res.status(403).json({error: "user already exists"})
