@@ -44,7 +44,7 @@ describe("Add to playlists", () => {
     it("add song in a playlist", async () => {
         const { status, body } = await request(app).put(`/users/1/playlists/${plist}/songs`).set("Accept", "application/Json")
             .send({
-                songId: "1"
+                songId: "0"
             })
         status.should.have.equal(201)
         body.should.not.have.property("error")
@@ -53,7 +53,7 @@ describe("Add to playlists", () => {
 
 describe("Elimination songs", () => {
     it("delete song from playlist", async () => {
-        const { status, body } = await request(app).delete(`/users/1/playlists/${plist}/songs/1`)
+        const { status, body } = await request(app).delete(`/users/1/playlists/${plist}/songs/0`)
         status.should.have.equal(201)
         body.should.have.property("message")
     });
