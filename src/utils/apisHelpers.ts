@@ -13,17 +13,15 @@ export const handleErrors = (req: Request, res: Response, next: NextFunction) =>
     else next();
 };
 
-export const checkExpiredToken = async ({headers: {accessToken, refreshToken}}: Request, res: Response, next: NextFunction) => {
-    if (accessToken && await client.getAsync(accessToken) === null) {
-        if (refreshToken) {
-            const mail = await client.getAsync(refreshToken) === null
-            if (mail) {
-                accessToken = tokgen.generate();
-                client.set(accessToken, JSON.stringify(mail), 'EX', 86400);
-                refreshToken = tokgen.generate()
-                client.set(refreshToken, JSON.stringify(mail), 'EX', 86400*7);
-            }
-        } else return res.status(401).json({error: "User must be logged to see products list"});
-    }
-    next();
+export const checkExpiredToken = async ({headers: {access_token, refresh_token}}: Request, res: Response, next: NextFunction) => {
+    if(!access_token && !refresh_token || access_token === refresh_token) return res.status(401).json({error: "User must be logged to see products list"});
+    let mail = await client.getAsync(access_token);
+    if(mail) return res.status(200);
+    mail = await client.getAsync(refresh_token)
+    if(!mail) return res.status(401).json({error: "User must be logged to see products list"});
+    access_token = tokgen.generate();
+    client.set(access_token, JSON.stringify(mail), 'EX', 86400);
+    refresh_token = tokgen.generate()
+    client.set(refresh_token, JSON.stringify(mail), 'EX', 86400*7);
+    res.status(201).json({access_token, refresh_token});
 }
