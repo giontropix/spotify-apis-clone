@@ -33,11 +33,30 @@ describe("all playlists", () => {
 describe("show playlist by id", () => {
     it("show single playlist", async () => {
         const { status, body } = await request(app)
-            .get("/users/1/playlists/P1613670121069")
+            .get(`/users/1/playlists/${plist}`)
             .set("Accept", "application/Json")
         status.should.have.equal(200)
         body.should.not.have.property("error")
     })
+})
+
+describe("Add to playlists", () => {
+    it("add song in a playlist", async () => {
+        const { status, body } = await request(app).put(`/users/1/playlists/${plist}/songs`).set("Accept", "application/Json")
+            .send({
+                songId: "1"
+            })
+        status.should.have.equal(201)
+        body.should.not.have.property("error")
+    });
+})
+
+describe("Elimination songs", () => {
+    it("delete song from playlist", async () => {
+        const { status, body } = await request(app).delete(`/users/1/playlists/${plist}/songs/1`)
+        status.should.have.equal(201)
+        body.should.have.property("message")
+    });
 })
 
 describe("Elimination playlist", async () => {
@@ -52,23 +71,4 @@ describe("Elimination playlist", async () => {
         status.should.have.equal(404)
         body.should.have.property("error")
     })
-})
-
-describe("Add to playlists", () => {
-    it("add song in a playlist", async () => {
-        const { status, body } = await request(app).put("/users/1/playlists/P1613670121069/songs").set("Accept", "application/Json")
-            .send({
-                songId: "1"
-            })
-        status.should.have.equal(201)
-        body.should.not.have.property("error")
-    });
-})
-
-describe("Elimination songs", () => {
-    it("delete song from playlist", async () => {
-        const { status, body } = await request(app).delete("/users/1/playlists/P1613670121069/songs/1")
-        status.should.have.equal(201)
-        body.should.have.property("message")
-    });
 })
