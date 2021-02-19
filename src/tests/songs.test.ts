@@ -4,11 +4,7 @@ import { app } from "../main";
 
 chai.should();
 
-export const delSong = async (id:string) => {
-    await request(app)
-    .delete(`/songs/${id}`)
-    .set("Accept", "application/json");
-};
+let songId = ""
 
 describe("all list of songs", () => {
     it("Show songs", async () => {
@@ -28,18 +24,9 @@ describe("single song", () => {
     });
 });
 
-describe("all artist", () => {
-    it("show artist", async () => {
-        const { status } = await request(app)
-            .get("/songs/song/authors")
-            .set("Accept", "application/json");
-        status.should.equal(200);
-    });
-});
-
 describe("insert songs", () => {
     it("show added song", async () => {
-        const { status, body} = await request(app)
+        const { status, body } = await request(app)
             .post("/songs")
             .set("Accept", "application/json")
             .send({
@@ -50,15 +37,15 @@ describe("insert songs", () => {
                 genre: "classical",
             });
         status.should.equal(201);
-        delSong(body.id)
+        songId = body.id
     });
 });
 
-describe.skip("Elimination song", () => {
+describe("Elimination song", () => {
     it("delete song", async () => {
         const { status } = await request(app)
-            .delete("/songs/1")
+            .delete(`/songs/${songId}`)
             .set("Accept", "application/json");
         status.should.equal(200);
-    });
+    })
 });

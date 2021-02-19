@@ -11,7 +11,13 @@
     "_id": "1",
     "_user_name": "Maggiordomo",
     "_mail": "aula145@mail.it",
-    "_playlist": [],
+    "_playlist": [
+      {
+        "_id": "P1613670121069",
+        "_title": "slow",
+        "_songs": []
+      }
+    ],
     "_followers": [],
     "_followed": []
   },
@@ -20,29 +26,6 @@
     "_user_name": "Pastore",
     "_mail": "ilpastore@mail.it",
     "_playlist": [],
-    "_followers": [],
-    "_followed": []
-  },
-  {
-    "_id": "U1613583743602",
-    "_user_name": "Emily",
-    "_mail": "emily@mail.it",
-    "_playlist": [
-      {
-        "_id": "P1613663820280",
-        "_title": "test",
-        "_songs": [
-          {
-            "_id": "0",
-            "_title": "Mi stuppai na fanta",
-            "_views": 40000,
-            "_length": 2.3,
-            "_artist": "Brigantony",
-            "_genre": "Folk popolare"
-          }
-        ]
-      }
-    ],
     "_followers": [],
     "_followed": []
   }

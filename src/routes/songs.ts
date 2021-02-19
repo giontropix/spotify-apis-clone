@@ -25,14 +25,11 @@ router.get('/', readSongsFileMiddleware, ({query:{filter, offset, limit}}:Reques
 
 })
 
-router.get('/authors', readSongsFileMiddleware, (_:Request, res:Response) => {
-    let authorsList:string[] = songsList.map(({artist}) => artist).filter((x:string,i:number,authorsList:string[]) => authorsList.indexOf(x) === i)
-    authorsList && res.status(200).json(authorsList) || res.status(404).json({message: "No artists found!"})
-})
-
-router.get('/genres/:genre_name', readSongsFileMiddleware, ({params: {genre_name}}:Request,res:Response) =>{
-    let genreSong = songsList.filter(({genre}:Song) => genre.toLowerCase() === genre_name.toLowerCase())
-    genreSong && res.status(200).json(genreSong) || res.status(404).json({message: "No artists found!"})
+router.get('/genres', readSongsFileMiddleware, ({query: {genre_name}}:Request,res:Response) =>{
+    if(genre_name){
+        let genreSong = songsList.filter(({genre}:Song) => genre.toLowerCase() === String(genre_name).toLowerCase())
+        genreSong && res.status(200).json(genreSong) || res.status(404).json({message: "No songs found!"})
+    }
 })
 
 router.post('/', readSongsFileMiddleware,body('title').notEmpty().isString().toLowerCase(),body('views').isInt(),body('length').isFloat(),body('artist').notEmpty().toLowerCase().isString(),body('genre').exists().isString(),body('album').isString(),({body: {title,views, length,artist,genre,album}}:Request, res:Response)=>{

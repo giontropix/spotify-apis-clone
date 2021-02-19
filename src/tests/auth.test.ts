@@ -3,9 +3,13 @@ import request from "supertest";
 import { app } from "../main";
 import redis from "redis";
 import bluebird from "bluebird";
+import {listOfUsers, writeToFile} from '../utils/manageUsersFromJSON'
 
 const client: any = bluebird.promisifyAll(redis.createClient());
 chai.should();
+
+let access_token = "";
+let refresh_token = "";
 
 export const regUser = async () => {
     await request(app).post("/register").set("Accept", "application/json").send({
@@ -32,8 +36,13 @@ export const logOut = async (access_token: string, refresh_token: string) => {
     });
 };
 
+export const delLastUser = async() => {
+    listOfUsers.pop()
+    writeToFile()
+}
 describe("Register user", () => {
     after(() => client.del("teo@mail.it"));
+    after(() => delLastUser())
 
     it("Register a user", async () => {
         const { status, body } = await request(app)
@@ -51,7 +60,9 @@ describe("Register user", () => {
 
 describe("Login user", () => {
     before(() => regUser()); 
-    after(() => client.del("teo@mail.it"));
+    after(() => client.del("teo@mail.it"))
+    after(() => delLastUser());
+    after(() => logOut(access_token, refresh_token))
 
     it("Login the first time", async () => {
         const { status, body } = await request(app).get("/login").set({
@@ -61,9 +72,8 @@ describe("Login user", () => {
         });
         status.should.equal(201);
         body.should.not.have.property("error");
-
-        let access_token = body.access_token;
-        let refresh_token = body.refresh_token;
-        logOut(access_token, refresh_token);
+        access_token = body.access_token;
+        refresh_token = body.refresh_token;
+        
     });
 });

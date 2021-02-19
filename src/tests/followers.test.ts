@@ -33,7 +33,7 @@ describe("Unfollow", async () => {
     it("unfollow user", async () => {
         const { status, body } = await request(app).delete("/users/0/followed/1").set("Accept", "application/json");
         status.should.have.equal(201)
-        console.log(body)
+        //console.log(body)
         body.should.have.property("message")
     })
 })
