@@ -60,6 +60,7 @@ router.put("/:idPlaylist/songs", readSongsFileMiddleware, body("songId").notEmpt
     if(!playlist) return res.status(404).json({error: "Playlist not found"})
     const song = songsList.find((item: Song ) => item.id === songId)
     if(!song) return res.status(404).json({error: "Song not found"})
+    if(playlist.songs.find((item: Song) => item.id === song.id)) return res.status(403).json({error: 'song just present in playlist'})
     currentUser.playlist.find(({id}:Playlist) => id === idPlaylist)?.songs.push(song)
     writeToFile()
     return res.status(201).json({message: `${song.title} added to playlist ${playlist.title}!`})
