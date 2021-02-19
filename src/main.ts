@@ -19,7 +19,9 @@ const options: cors.CorsOptions = {
         'mail',
         'password',
         'access_token',
-        'refresh_token'
+        'refresh_token',
+        "access_token",
+        "refresh_token"
     ],
     credentials: true,
     methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
