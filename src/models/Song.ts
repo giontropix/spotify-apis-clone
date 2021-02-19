@@ -6,8 +6,13 @@ export class Song {
         private _length: number,
         private _artist: string,
         private _genre: string,
+        private _src: string,
         private _album?: string
     ) {
+    }
+
+    get uri(): string | undefined {
+        return this._src
     }
 
     get id(): string {
