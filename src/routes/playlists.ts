@@ -10,6 +10,7 @@ import {Song} from "../models/Song";
 
 const router = express.Router({mergeParams: true});
 
+// CREARE UNA NUOVA PLAYLIST
 router.post("/", body('name').exists().isString(), handleErrors, ({params: {id}, body: {name}}: Request, res:Response) => {
     const currentUser = listOfUsers.find((user: User) => user.id === id)
     if(!currentUser) return res.status(404).json({error: "User not found"})
@@ -20,9 +21,12 @@ router.post("/", body('name').exists().isString(), handleErrors, ({params: {id},
 })
 
 //VEDERE TUTTE LE PLAYLIST DI UN UTENTE
-router.get("/", ({params:{id}}:Request, res:Response) => {
+router.get("/", ({params:{id}, query:{offset, limit}}:Request, res:Response) => {
     const currentUser = listOfUsers.find((user: User) => user.id === id)
     if(!currentUser) return res.status(404).json({error: "User not found"})
+    if(offset && limit) return res.status(200).json(currentUser.playlist.map((list: Playlist) => ({
+        id: list.id, title: list.title
+    })).slice(Number(offset), Number(offset) + Number(limit)))
     return res.status(200).json(currentUser.playlist.map((list: Playlist) => ({
             id: list.id, title: list.title
         })))

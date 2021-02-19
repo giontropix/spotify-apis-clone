@@ -22,9 +22,10 @@ router.put("/followed", body('userIdToFollow').exists().isString(), handleErrors
 })
 
 //VEDERE CHI SEGUE UN UTENTE
-router.get("/followed", ({params: {id}}: Request, res:Response) => {
+router.get("/followed", ({params: {id}, query: {offset, limit}}: Request, res:Response) => {
     const currentUser = listOfUsers.find((user: User) => user.id === id)
     if(!currentUser) return res.status(404).json({error: "User not found"})
+    if(offset && limit) return res.status(200).json(currentUser.followed.slice(Number(offset), Number(offset) + Number(limit)))
     return res.status(200).json(currentUser.followed);
 })
 

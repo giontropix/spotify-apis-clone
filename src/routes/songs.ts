@@ -12,14 +12,17 @@ router.get('/:id_song', readSongsFileMiddleware, ({params: {id_song}}:Request, r
     songById && res.status(200).json(songById) || res.status(404).json({message: "Song not found!"})
 })
 
-router.get('/', readSongsFileMiddleware, ({query:{filter}}:Request, res:Response) => {
+router.get('/', readSongsFileMiddleware, ({query:{filter, offset, limit}}:Request, res:Response) => {
     if(filter){
         let songSearch:Song | Song[] | undefined = songsList.filter((songs:Song) => {
             if (songs.title.toLowerCase().includes(String(filter).toLowerCase())  ||
                 songs.artist.toLowerCase().includes(String(filter).toLowerCase())) return songs
         })
         songSearch && res.status(200).json(songSearch) || res.status(404).json({message: "Error"})
-    }else res.status(200).json(songsList)
+    } else if (offset && limit) {
+        res.status(200).json(songsList.slice(Number(offset), Number(offset) + Number(limit)))
+    } else res.status(200).json(songsList)
+
 })
 
 router.get('/authors', readSongsFileMiddleware, (_:Request, res:Response) => {
