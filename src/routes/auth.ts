@@ -14,7 +14,7 @@ const tokgen = new TokenGenerator({bitSize: 512, baseEncoding: TokenBase.BASE62}
 
 router.get("/check/", checkExpiredToken);
 
-router.post("/register/", readFileMiddleware, body("mail").isEmail().normalizeEmail(), body("user_name").notEmpty().isString().trim().escape(), body("password").exists().isString().isLength({ min: 4 }), handleErrors, async ({ body: { mail, user_name, password } }, res) => {
+router.post("/register/", readFileMiddleware, body("mail").isEmail().normalizeEmail(), body("user_name").isString().notEmpty().trim().escape(), body("password").isString().isLength({ min: 4 }), handleErrors, async ({ body: { mail, user_name, password } }, res) => {
     if(await client.hgetallAsync(mail) !== null) return res.status(403).json({error: "user already exists"})
     const newUser = new User(`U${Date.now()}`, user_name, mail)
     client.hmset(mail, {"user_password": hash(password), "id": newUser.id})

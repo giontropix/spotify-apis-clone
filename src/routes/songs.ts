@@ -42,7 +42,7 @@ router.post('/', readSongsFileMiddleware,body('title').notEmpty().isString().toL
 router.delete('/:id_song', readSongsFileMiddleware, ({params: {id_song}}:Request, res:Response) =>{
     songsList.splice(songsList.findIndex(({id}) => id === id_song),1)
     writeSongsToFile()
-    res.status(200).json({message: "Song deleted!"})
+    res.status(201).json({message: "Song deleted!"})
 })
 
 export {router as songs}

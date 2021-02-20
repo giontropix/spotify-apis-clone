@@ -14,7 +14,7 @@ router.get("/", (_: Request, res: Response) => res.status(200).json(listOfUsers)
 router.get("/:id", ({params: {id}}, res: Response) => {
     const user = listOfUsers.find((user: User) => user.id === id)
     !user && res.status(404).json({error: "User not found"})
-    res.status(201).json(user);
+    res.status(200).json(user);
 })
 
 export {router as users }
