@@ -29,17 +29,17 @@
     "_mail": "emily@mail.it",
     "_playlist": [
       {
-        "_id": "P1613663820280",
+        "_id": "P1613823733999",
         "_title": "test",
         "_songs": [
           {
-            "_id": "0",
-            "_title": "Mi stuppai na fanta",
+            "_id": "7",
+            "_title": "Astronomia",
             "_views": 40000,
-            "_length": 2.3,
-            "_artist": "Brigantony",
-            "_genre": "Folk popolare",
-            "_src": "https://p.scdn.co/mp3-preview/763a986448289165cb0ead844d9b6513340cd68d"
+            "_length": 3.59,
+            "_artist": "Vicetone/Tony Igy",
+            "_genre": "House",
+            "_src": "https://p.scdn.co/mp3-preview/76175ba50f727200e8057b74eeb9459120d3f4a4"
           }
         ]
       }

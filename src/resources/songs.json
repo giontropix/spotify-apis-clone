@@ -5,44 +5,40 @@
     "_views": 40000,
     "_length": 2.3,
     "_artist": "Brigantony",
-    "_genre": "Folk popolare",
-    "_src": "https://p.scdn.co/mp3-preview/763a986448289165cb0ead844d9b6513340cd68d"
-  },
+    "_src": "https://p.scdn.co/mp3-preview/763a986448289165cb0ead844d9b6513340cd68d",
+    "_genre": "Folk popolare"},
   {
     "_id": "2",
     "_title": "Occhi a pampina",
     "_views": 40000,
     "_length": 4.44,
     "_artist": "Tinturia",
-    "_genre": "Folk popolare",
-    "_src": "https://p.scdn.co/mp3-preview/88ef7e3de17bc773105c5da2f693151a0722159d"
-  },
+    "_src": "https://p.scdn.co/mp3-preview/88ef7e3de17bc773105c5da2f693151a0722159d",
+    "_genre": "Folk popolare"},
   {
     "_id": "3",
     "_title": "Nopakytoman",
     "_views": 40000,
     "_length": 3.59,
     "_artist": "Brigantiny",
-    "_genre": "Rock",
-    "_src": "https://p.scdn.co/mp3-preview/11ab2b669832ed461543b5033530908ad960d387?cid=774b29d4f13844c495f206cafdad9c86"
-  },
+    "_src": "https://p.scdn.co/mp3-preview/11ab2b669832ed461543b5033530908ad960d387?cid=774b29d4f13844c495f206cafdad9c86",
+    "_genre": "Rock"},
   {
     "_id": "4",
     "_title": "Animals",
     "_views": 30,
     "_length": 1.3,
     "_artist": "Martin Garrix",
-    "_genre": "EDM",
-    "_src": "https://p.scdn.co/mp3-preview/0bcf16918491603928da716b971d81ebda92f813"
-  },
+    "_src": "https://p.scdn.co/mp3-preview/0bcf16918491603928da716b971d81ebda92f813",
+    "_genre": "EDM"},
   {
     "_id": "5",
     "_title": "Parasite Eve",
     "_views": 40000,
     "_length": 3.59,
     "_artist": "Bring me the horizon",
-    "_genre": "Rock",
-    "_src": "https://p.scdn.co/mp3-preview/ced2c0d804773f8e0b52603655238cd609179199"
+    "_src": "https://p.scdn.co/mp3-preview/ced2c0d804773f8e0b52603655238cd609179199",
+    "_genre": "Rock"
   },
   {
     "_id": "6",
@@ -50,8 +46,8 @@
     "_views": 40000,
     "_length": 3.59,
     "_artist": "Bring me the horizon",
-    "_genre": "Rock",
-    "_src": "https://p.scdn.co/mp3-preview/88967afd874c48022e240ebbfdefc7f915ec9261"
+    "_src": "https://p.scdn.co/mp3-preview/88967afd874c48022e240ebbfdefc7f915ec9261",
+    "_genre": "Rock"
   },
   {
     "_id": "7",
@@ -59,8 +55,8 @@
     "_views": 40000,
     "_length": 3.59,
     "_artist": "Vicetone/Tony Igy",
-    "_genre": "House",
-    "_src": "https://p.scdn.co/mp3-preview/76175ba50f727200e8057b74eeb9459120d3f4a4"
+    "_src": "https://p.scdn.co/mp3-preview/76175ba50f727200e8057b74eeb9459120d3f4a4",
+    "_genre": "House"
   },
   {
     "_id": "8",
@@ -68,8 +64,8 @@
     "_views": 100000,
     "_length": 4.01,
     "_artist": "DJ Provenzano/Emi",
-    "_genre": "House",
-    "_src": "https://p.scdn.co/mp3-preview/e269855ae62d08f49c2b249f219067f8b776d1b7"
+    "_src": "https://p.scdn.co/mp3-preview/e269855ae62d08f49c2b249f219067f8b776d1b7",
+    "_genre": "House"
   },
   {
     "_id": "9",
@@ -77,99 +73,7 @@
     "_views": 200000,
     "_length": 4.43,
     "_artist": "Eiffel 65/Gabry Ponte",
-    "_genre": "House",
-    "_src": "https://p.scdn.co/mp3-preview/29dae6e5b44e50da50e1f3e84f34c1b247a30129"
-  },
-  {
-    "_id": "test0",
-    "_title": "Mi stuppai na fanta",
-    "_views": 40000,
-    "_length": 2.31,
-    "_artist": "Brigantony",
-    "_genre": "Folk popolare",
-    "_src": ""
-  },
-  {
-    "_id": "test1",
-    "_title": "A zita pilusa",
-    "_views": 50000,
-    "_length": 3.55,
-    "_artist": "Brigantony",
-    "_genre": "Folk popolare",
-    "_src": ""
-  },
-  {
-    "_id": "test2",
-    "_title": "Occhi a pampina",
-    "_views": 40000,
-    "_length": 4.44,
-    "_artist": "Tinturia",
-    "_genre": "Folk popolare",
-    "_src": ""
-  },
-  {
-    "_id": "test3",
-    "_title": "Nopakytoman",
-    "_views": 40000,
-    "_length": 3.59,
-    "_artist": "Brigantiny",
-    "_genre": "Rock",
-    "_src": ""
-  },
-  {
-    "_id": "test4",
-    "_title": "Animals",
-    "_views": 30,
-    "_length": 1.3,
-    "_artist": "Martin Garrix",
-    "_genre": "EDM",
-    "_src": "",
-    "_album": "Singolo"
-  },
-  {
-    "_id": "test10",
-    "_title": "Mi stuppai na fanta",
-    "_views": 40000,
-    "_length": 2.3,
-    "_artist": "Brigantony",
-    "_genre": "Folk popolare",
-    "_src": ""
-  },
-  {
-    "_id": "test11",
-    "_title": "A zita pilusa",
-    "_views": 50000,
-    "_length": 3.55,
-    "_artist": "Brigantony",
-    "_genre": "Folk popolare",
-    "_src": ""
-  },
-  {
-    "_id": "test12",
-    "_title": "Occhi a pampina",
-    "_views": 40000,
-    "_length": 4.44,
-    "_artist": "Tinturia",
-    "_genre": "Folk popolare",
-    "_src": ""
-  },
-  {
-    "_id": "test13",
-    "_title": "Nopakytoman",
-    "_views": 40000,
-    "_length": 3.59,
-    "_artist": "Brigantiny",
-    "_genre": "Rock",
-    "_src": ""
-  },
-  {
-    "_id": "test14",
-    "_title": "Animals",
-    "_views": 30,
-    "_length": 1.3,
-    "_artist": "Martin Garrix",
-    "_genre": "EDM",
-    "_src": "",
-    "_album": "Singolo"
+    "_src": "https://p.scdn.co/mp3-preview/29dae6e5b44e50da50e1f3e84f34c1b247a30129",
+    "_genre": "House"
   }
 ]

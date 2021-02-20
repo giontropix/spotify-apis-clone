@@ -20,7 +20,7 @@ export const readFile = () => {
         listOfUsers = JSON.parse(data).map((user: any) =>
             user && new User(user._id, user._user_name, user._mail, user._playlist.map((list: any) => {
                 if (list) return new Playlist(list._id, list._title, list._songs.map((song: any) => {
-                    if(song) return new Song(song._id, song._title, song._views, song._length, song._artist, song._genre, song?._album)
+                    if(song) return new Song(song._id, song._title, song._views, song._length, song._artist, song._genre, song._src, song?._album)
                 }))
             }), user._followers.map((foll: any) => {
                 if(foll) return new Follower(foll._id, foll._user_name)
