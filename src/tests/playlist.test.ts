@@ -1,14 +1,56 @@
 import chai from "chai";
 import request from "supertest";
 import { app } from "../main";
+import redis from "redis";
+import bluebird from "bluebird";
+import {listOfUsers, writeToFile} from '../utils/manageUsersFromJSON'
+import {songsList, writeSongsToFile} from '../utils/manageSongsFromJSON'
+
+const client: any = bluebird.promisifyAll(redis.createClient());
 
 chai.should()
 let plist = ""
+let accountId = ""
+let songId = ""
 
+export const createAcc = async() => {
+    const { body: { userId } } = await request(app).post("/register").set("Accept", "application/json").send({
+        mail: "teo@mail.it",
+        user_name: "teo",
+        password: "teold",
+    });
+    accountId = userId
+}
+
+export const delLastUser = async() => {
+    listOfUsers.pop()
+    writeToFile()
+}
+
+export const createSong = async() => {
+    const { body: {id} } = await request(app)
+            .post("/songs")
+            .set("Accept", "application/json")
+            .send({
+                title: "relax",
+                views: 1,
+                length: 1.55,
+                artist: "Tizio",
+                genre: "classical",
+            });
+        songId = id
+}
+
+export const delLastSong = async() => {
+    songsList.pop()
+    writeSongsToFile()
+}
 describe("Playlist", () => {
+    before(() => createAcc())
+    
     it("create playlist", async () => {
         const { status, body } = await request(app)
-            .post("/users/1/playlists")
+            .post(`/users/${accountId}/playlists`)
             .set("Accept", "application/Json")
             .send({
                 name: "slow"
@@ -22,7 +64,7 @@ describe("Playlist", () => {
 describe("all playlists", () => {
     it("show playlist", async () => {
         const { status, body } = await request(app)
-            .get("/users/1/playlists")
+            .get(`/users/${accountId}/playlists`)
             .set("Accept", "application/Json")
         status.should.have.equal(200)
         body.should.not.have.property("error")
@@ -33,7 +75,7 @@ describe("all playlists", () => {
 describe("show playlist by id", () => {
     it("show single playlist", async () => {
         const { status, body } = await request(app)
-            .get(`/users/1/playlists/${plist}`)
+            .get(`/users/${accountId}/playlists/${plist}`)
             .set("Accept", "application/Json")
         status.should.have.equal(200)
         body.should.not.have.property("error")
@@ -41,10 +83,12 @@ describe("show playlist by id", () => {
 })
 
 describe("Add to playlists", () => {
+    before(() => createSong())
+
     it("add song in a playlist", async () => {
-        const { status, body } = await request(app).put(`/users/1/playlists/${plist}/songs`).set("Accept", "application/Json")
+        const { status, body } = await request(app).put(`/users/${accountId}/playlists/${plist}/songs`).set("Accept", "application/Json")
             .send({
-                songId: "0"
+                songId: `${songId}`
             })
         status.should.have.equal(201)
         body.should.not.have.property("error")
@@ -53,22 +97,19 @@ describe("Add to playlists", () => {
 
 describe("Elimination songs", () => {
     it("delete song from playlist", async () => {
-        const { status, body } = await request(app).delete(`/users/1/playlists/${plist}/songs/0`)
+        const { status, body } = await request(app).delete(`/users/${accountId}/playlists/${plist}/songs/${songId}`)
         status.should.have.equal(201)
         body.should.have.property("message")
     });
 })
 
 describe("Elimination playlist", async () => {
+    after(() => client.del("teo@mail.it"))
+    after(() => delLastUser())
+    after(() => delLastSong())
     it("playlist deleted", async () => {
-        const { status, body } = await request(app).delete(`/users/1/playlists/${plist}`)
+        const { status, body } = await request(app).delete(`/users/${accountId}/playlists/${plist}`)
         status.should.have.equal(201)
         body.should.not.have.property("error")
-    })
-
-    it("error playlist already deleted", async () => {
-        const { status, body } = await request(app).delete(`/users/1/playlists/${plist}`)
-        status.should.have.equal(404)
-        body.should.have.property("error")
     })
 })

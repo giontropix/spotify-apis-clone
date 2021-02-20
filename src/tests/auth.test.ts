@@ -60,16 +60,12 @@ describe("Register user", () => {
 
 describe("Login user", () => {
     before(() => regUser()); 
-    after(() => client.del("teo@mail.it"))
-    after(() => delLastUser());
-    after(() => logOut(access_token, refresh_token))
-
     it("Login the first time", async () => {
-        const { status, body } = await request(app).get("/login").set({
-            Accept: "application/json",
-            mail: "teo@mail.it",
-            password: "teold",
-        });
+    const { status, body } = await request(app).get("/login").set({
+        Accept: "application/json",
+        mail: "teo@mail.it",
+        password: "teold",
+    });
         status.should.equal(201);
         body.should.not.have.property("error");
         access_token = body.access_token;
@@ -77,3 +73,13 @@ describe("Login user", () => {
         
     });
 });
+
+describe("logout user", () => {
+    after(() => client.del("teo@mail.it"))
+    after(() => delLastUser());
+
+    it("logout", async() =>{
+        const {status} = await request(app).delete("/logout").set({Accept: "application/json", access_token, refresh_token})
+        status.should.equal(201)
+    })
+})
