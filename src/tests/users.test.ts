@@ -15,7 +15,7 @@ describe("List of users", () => {
 describe("show user by id", () => {
     it("show a single user", async () => {
         const { status, body } = await request(app).get("/users/2").set("Accept", "application/Json");
-        status.should.have.equal(201)
+        status.should.have.equal(200)
         body.should.not.have.property("error")
     })
 })

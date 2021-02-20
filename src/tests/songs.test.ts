@@ -48,6 +48,6 @@ describe("Delete song", () => {
         const { status } = await request(app)
             .delete(`/songs/${songId}`)
             .set("Accept", "application/json");
-        status.should.equal(200);
+        status.should.equal(201);
     })
 });
