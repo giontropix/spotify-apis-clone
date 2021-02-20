@@ -11,7 +11,7 @@ import {Song} from "../models/Song";
 const router = express.Router({mergeParams: true});
 
 // CREARE UNA NUOVA PLAYLIST
-router.post("/", body('name').exists().isString(), handleErrors, ({params: {id}, body: {name}}: Request, res:Response) => {
+router.post("/", body('name').isString().notEmpty(), handleErrors, ({params: {id}, body: {name}}: Request, res:Response) => {
     const currentUser = listOfUsers.find((user: User) => user.id === id)
     if(!currentUser) return res.status(404).json({error: "User not found"})
     const playlistId: string = "P" + Date.now().toString();
@@ -25,11 +25,8 @@ router.get("/", ({params:{id}, query:{offset, limit}}:Request, res:Response) => 
     const currentUser = listOfUsers.find((user: User) => user.id === id)
     if(!currentUser) return res.status(404).json({error: "User not found"})
     if(offset && limit) return res.status(200).json(currentUser.playlist.map((list: Playlist) => ({
-        id: list.id, title: list.title
-    })).slice(Number(offset), Number(offset) + Number(limit)))
-    return res.status(200).json(currentUser.playlist.map((list: Playlist) => ({
-            id: list.id, title: list.title
-        })))
+        id: list.id, title: list.title})).slice(Number(offset), Number(offset) + Number(limit)))
+    return res.status(200).json(currentUser.playlist.map((list: Playlist) => ({id: list.id, title: list.title})))
 })
 
 //VEDERE UNA SINGOLA PLAYLIST
@@ -60,6 +57,7 @@ router.put("/:idPlaylist/songs", readSongsFileMiddleware, body("songId").notEmpt
     if(!playlist) return res.status(404).json({error: "Playlist not found"})
     const song = songsList.find((item: Song ) => item.id === songId)
     if(!song) return res.status(404).json({error: "Song not found"})
+    if(playlist.songs.find((item: Song) => item.id === song.id)) return res.status(403).json({error: 'This song is already in the selected playlist'})
     currentUser.playlist.find(({id}:Playlist) => id === idPlaylist)?.songs.push(song)
     writeToFile()
     return res.status(201).json({message: `${song.title} added to playlist ${playlist.title}!`})
