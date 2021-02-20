@@ -25,11 +25,11 @@ router.get('/', readSongsFileMiddleware, ({query:{filter, offset, limit}}:Reques
 
 })
 
-router.get('/genres', readSongsFileMiddleware, ({query: {genre_name}}:Request,res:Response) =>{
+router.get('/genres/list', readSongsFileMiddleware, ({query: {genre_name}}:Request,res:Response) =>{
     if(genre_name){
         let genreSong = songsList.filter(({genre}:Song) => genre.toLowerCase() === String(genre_name).toLowerCase())
         genreSong && res.status(200).json(genreSong) || res.status(404).json({message: "No songs found!"})
-    }
+    }else res.status(200).json(songsList)
 })
 
 router.post('/', readSongsFileMiddleware,body('title').notEmpty().isString().toLowerCase(),body('views').isInt(),body('length').isFloat(),body('artist').notEmpty().toLowerCase().isString(),body('genre').exists().isString(),body('album').isString(),({body: {title,views, length,artist,genre,album}}:Request, res:Response)=>{
