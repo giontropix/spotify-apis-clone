@@ -17,7 +17,8 @@ router.get('/', readSongsFileMiddleware, ({query:{filter, offset, limit}}:Reques
         let songSearch:Song | Song[] | undefined = songsList.filter((songs:Song) => {
             if (songs.title.toLowerCase().includes(String(filter).toLowerCase())  ||
                 songs.artist.toLowerCase().includes(String(filter).toLowerCase())) return songs
-        })
+        });
+        if (offset && limit) return res.status(200).json(songSearch.slice(Number(offset), Number(offset) + Number(limit)))
         songSearch && res.status(200).json(songSearch) || res.status(404).json({message: "Error"})
     } else if (offset && limit) {
         res.status(200).json(songsList.slice(Number(offset), Number(offset) + Number(limit)))
