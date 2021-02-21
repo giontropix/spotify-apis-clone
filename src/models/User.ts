@@ -6,6 +6,7 @@ export class User {
         private _id: string,
         private _user_name: string,
         private _mail: string,
+        private _sex: string,
         private _playlist: Playlist[] = [],
         private _followers: Follower[] = [],
         private _followed: Follower[] = []

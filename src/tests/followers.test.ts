@@ -1,17 +1,18 @@
 import chai from "chai";
 import request from "supertest";
-import { app } from "../main";
+import {app} from "../main";
 import redis from "redis";
 import bluebird from "bluebird";
 import {listOfUsers, writeToFile} from "../utils/manageUsersFromJSON"
 
 const client: any = bluebird.promisifyAll(redis.createClient());
 
-export const createAcc = async(mail:string ,user_name:string, password:string) => {
+export const createAcc = async(mail:string ,user_name:string, password:string, sex:string) => {
     const { body: { userId } } = await request(app).post("/register").set("Accept", "application/json").send({
         mail,
         user_name,
         password,
+        sex
     });
     return userId
 }
@@ -27,8 +28,8 @@ let secondAccount = ""
 chai.should();
 
 describe("to follow", () => {
-    before(async() => firstAccount = await createAcc("a@a.it","Paolo","asdasd"))
-    before(async() => secondAccount = await createAcc("a1@a.it","Paolo1","asdasd1"))
+    before(async() => firstAccount = await createAcc("a@a.it","Paolo","asdasd", "M"))
+    before(async() => secondAccount = await createAcc("a1@a.it","Paolo1","asdasd1", "M"))
 
     it("follow by id", async () => {
         const { status, body } = await request(app).put(`/users/${firstAccount}/followed`)

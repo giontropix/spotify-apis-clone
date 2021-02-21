@@ -16,7 +16,7 @@ export const handleErrors = (req: Request, res: Response, next: NextFunction) =>
 export const checkExpiredToken = async ({headers: {access_token, refresh_token}}: Request, res: Response, next: NextFunction) => {
     if(!access_token && !refresh_token || access_token === refresh_token) return res.status(401).json({error: "User must be logged to see products list"});
     let mail = await client.getAsync(access_token);
-    if(mail) return res.status(200);
+    if(mail) return res.status(200).json({access_token, refresh_token});
     mail = await client.getAsync(refresh_token)
     if(!mail) return res.status(401).json({error: "User must be logged to see products list"});
     access_token = tokgen.generate();

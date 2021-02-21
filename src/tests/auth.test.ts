@@ -1,6 +1,6 @@
 import chai from "chai";
 import request from "supertest";
-import { app } from "../main";
+import {app} from "../main";
 import redis from "redis";
 import bluebird from "bluebird";
 import {listOfUsers, writeToFile} from '../utils/manageUsersFromJSON'
@@ -16,6 +16,7 @@ export const regUser = async () => {
         mail: "teo@mail.it",
         user_name: "teo",
         password: "teold",
+        sex: "M",
     });
 };
 
@@ -52,6 +53,7 @@ describe("Register user", () => {
                 mail: "teo@mail.it",
                 user_name: "teo",
                 password: "teold",
+                sex: "M",
             });
         status.should.equal(201)
         body.should.not.have.property("error");

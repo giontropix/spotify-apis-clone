@@ -3,6 +3,7 @@
     "_id": "0",
     "_user_name": "Turi",
     "_mail": "turidogiappuni@mail.it",
+    "_sex": "M",
     "_playlist": [],
     "_followers": [],
     "_followed": []
@@ -11,6 +12,7 @@
     "_id": "1",
     "_user_name": "Maggiordomo",
     "_mail": "aula145@mail.it",
+    "_sex": "M",
     "_playlist": [],
     "_followers": [],
     "_followed": []
@@ -19,6 +21,7 @@
     "_id": "2",
     "_user_name": "Pastore",
     "_mail": "ilpastore@mail.it",
+    "_sex": "M",
     "_playlist": [],
     "_followers": [],
     "_followed": []
@@ -27,6 +30,7 @@
     "_id": "U1613583743602",
     "_user_name": "Emily",
     "_mail": "emily@mail.it",
+    "_sex": "F",
     "_playlist": [
       {
         "_id": "P1613823733999",
@@ -44,6 +48,110 @@
         ]
       }
     ],
+    "_followers": [],
+    "_followed": []
+  },
+  {
+    "_id": "U1613840652002",
+    "_user_name": "Sharon",
+    "_mail": "asd@asd.it",
+    "_sex": "F",
+    "_playlist": [],
+    "_followers": [
+      {
+        "_id": "U1613849413909",
+        "_user_name": "asdolo"
+      },
+      {
+        "_id": "U1613849459208",
+        "_user_name": "aaa"
+      }
+    ],
+    "_followed": [
+      {
+        "_id": "0",
+        "_user_name": "Turi"
+      },
+      {
+        "_id": "1",
+        "_user_name": "Maggiordomo"
+      },
+      {
+        "_id": "2",
+        "_user_name": "Pastore"
+      },
+      {
+        "_id": "U1613583743602",
+        "_user_name": "Emily"
+      },
+      {
+        "_id": "U1613840652006",
+        "_user_name": "Frances"
+      },
+      {
+        "_id": "U1613840652007",
+        "_user_name": "Sorella Sharon"
+      },
+      {
+        "_id": "U1613840652008",
+        "_user_name": "Simona"
+      },
+      {
+        "_id": "U1613840652009",
+        "_user_name": "Angela"
+      }
+    ]
+  },
+  {
+    "_id": "U1613840652006",
+    "_user_name": "Frances",
+    "_mail": "asdf@asd.it",
+    "_sex": "M",
+    "_playlist": [],
+    "_followers": [
+      {
+        "_id": "U1613840652002",
+        "_user_name": "Sharon"
+      },
+      {
+        "_id": "U1613849413909",
+        "_user_name": "asdolo"
+      },
+      {
+        "_id": "U1613849459208",
+        "_user_name": "aaa"
+      }
+    ],
+    "_followed": []
+  },
+  {
+    "_id": "U1613840652007",
+    "_user_name": "Sorella Sharon",
+    "_mail": "asdfg@asd.it",
+    "_sex": "F",
+    "_playlist": [],
+    "_followers": [
+      {
+        "_id": "U1613840652002",
+        "_user_name": "Sharon"
+      },
+      {
+        "_id": "U1613849413909",
+        "_user_name": "asdolo"
+      },
+      {
+        "_id": "U1613849459208",
+        "_user_name": "aaa"
+      }
+    ],
+    "_followed": []
+  },
+  {
+    "_id": "U1613918494426",
+    "_user_name": "Eolo",
+    "_mail": "eolo@mail.it",
+    "_sex": "M",
+    "_playlist": [],
     "_followers": [],
     "_followed": []
   }

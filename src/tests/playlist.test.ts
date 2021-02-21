@@ -1,6 +1,6 @@
 import chai from "chai";
 import request from "supertest";
-import { app } from "../main";
+import {app} from "../main";
 import redis from "redis";
 import bluebird from "bluebird";
 import {listOfUsers, writeToFile} from '../utils/manageUsersFromJSON'
@@ -18,6 +18,7 @@ export const createAcc = async() => {
         mail: "teo@mail.it",
         user_name: "teo",
         password: "teold",
+        sex: "M",
     });
     accountId = userId
 }
