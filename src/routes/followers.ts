@@ -55,4 +55,20 @@ router.delete("/followed/:userIdToUnfollow", ({params:{id, userIdToUnfollow}}:Re
     return res.status(201).json({message: "User unfollowed", currentUser, userToUnfollow})
 })
 
+//SMETTERE DI FARSI SEGUIRE DA UN UTENTE
+router.delete("/followers/:userIdToUnfollow", ({params:{id, userIdToUnfollow}}:Request, res: Response) => {
+    const currentUser = listOfUsers.find((user: User) => user.id === id)
+    if(!currentUser) return res.status(404).json({error: "User not found"})
+    const userToBlock = listOfUsers.find((user: User) => user.id === userIdToUnfollow)
+    if(!userToBlock) return res.status(404).json({error: "User to block not found"})
+    const userToBlockIndex = currentUser.followers.findIndex((user: Follower) => user.id === userIdToUnfollow)
+    if(userToBlockIndex === -1) return res.status(404).json({error: "User to block not found"})
+    const currentUserIndex = userToBlock.followed.findIndex((user: Follower) => user.id === id)
+    if(currentUserIndex === -1) return res.status(404).json({error: "User not found"})
+    currentUser.followers.splice(userToBlockIndex, 1)
+    userToBlock.followed.splice(currentUserIndex, 1)
+    writeToFile()
+    return res.status(201).json({message: "User blocked", currentUser, userToBlock})
+})
+
 export {router as followers}

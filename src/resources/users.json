@@ -9,10 +9,6 @@
       {
         "_id": "U1613583743602",
         "_user_name": "Emily"
-      },
-      {
-        "_id": "U1613918494426",
-        "_user_name": "Eolo"
       }
     ],
     "_followed": []
@@ -27,10 +23,6 @@
       {
         "_id": "U1613583743602",
         "_user_name": "Emily"
-      },
-      {
-        "_id": "U1613918494426",
-        "_user_name": "Eolo"
       }
     ],
     "_followed": []
@@ -45,10 +37,6 @@
       {
         "_id": "U1613583743602",
         "_user_name": "Emily"
-      },
-      {
-        "_id": "U1613918494426",
-        "_user_name": "Eolo"
       }
     ],
     "_followed": []
@@ -193,50 +181,32 @@
     "_sex": "M",
     "_playlist": [
       {
-        "_id": "P1613927956126",
-        "_title": "test1",
+        "_id": "P1613934769266",
+        "_title": "test",
+        "_songs": []
+      },
+      {
+        "_id": "P1613934775156",
+        "_title": "test2",
         "_songs": [
           {
-            "_id": "9",
-            "_title": "Blue",
-            "_views": 200000,
-            "_length": 4.43,
-            "_artist": "Eiffel 65/Gabry Ponte",
-            "_genre": "House",
-            "_src": "https://p.scdn.co/mp3-preview/29dae6e5b44e50da50e1f3e84f34c1b247a30129"
+            "_id": "3",
+            "_title": "Nopakytoman",
+            "_views": 40000,
+            "_length": 3.59,
+            "_artist": "Brigantiny",
+            "_genre": "Rock",
+            "_src": "https://p.scdn.co/mp3-preview/11ab2b669832ed461543b5033530908ad960d387?cid=774b29d4f13844c495f206cafdad9c86"
           }
         ]
       },
       {
-        "_id": "P1613927961043",
-        "_title": "test2",
-        "_songs": []
-      },
-      {
-        "_id": "P1613927976408",
+        "_id": "P1613936008341",
         "_title": "test3",
-        "_songs": []
-      },
-      {
-        "_id": "P1613927980976",
-        "_title": "test4",
         "_songs": []
       }
     ],
     "_followers": [],
-    "_followed": [
-      {
-        "_id": "2",
-        "_user_name": "Pastore"
-      },
-      {
-        "_id": "0",
-        "_user_name": "Turi"
-      },
-      {
-        "_id": "1",
-        "_user_name": "Maggiordomo"
-      }
-    ]
+    "_followed": []
   }
 ]
