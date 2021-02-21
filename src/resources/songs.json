@@ -1,6 +1,15 @@
 [
   {
     "_id": "0",
+    "_title": "Papà Castoro REmix",
+    "_views": 40000,
+    "_length": 6.11,
+    "_artist": "MVRS",
+    "_genre": "Psyco",
+    "_src": "../../../assets/papacastoro.mp3"
+  },
+  {
+    "_id": "1",
     "_title": "Mi stuppai na fanta",
     "_views": 40000,
     "_length": 2.3,

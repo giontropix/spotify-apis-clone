@@ -5,7 +5,12 @@
     "_mail": "turidogiappuni@mail.it",
     "_sex": "M",
     "_playlist": [],
-    "_followers": [],
+    "_followers": [
+      {
+        "_id": "U1613583743602",
+        "_user_name": "Emily"
+      }
+    ],
     "_followed": []
   },
   {
@@ -14,7 +19,12 @@
     "_mail": "aula145@mail.it",
     "_sex": "M",
     "_playlist": [],
-    "_followers": [],
+    "_followers": [
+      {
+        "_id": "U1613583743602",
+        "_user_name": "Emily"
+      }
+    ],
     "_followed": []
   },
   {
@@ -23,7 +33,12 @@
     "_mail": "ilpastore@mail.it",
     "_sex": "M",
     "_playlist": [],
-    "_followers": [],
+    "_followers": [
+      {
+        "_id": "U1613583743602",
+        "_user_name": "Emily"
+      }
+    ],
     "_followed": []
   },
   {
@@ -48,8 +63,26 @@
         ]
       }
     ],
-    "_followers": [],
-    "_followed": []
+    "_followers": [
+      {
+        "_id": "U1613918494426",
+        "_user_name": "Eolo"
+      }
+    ],
+    "_followed": [
+      {
+        "_id": "0",
+        "_user_name": "Turi"
+      },
+      {
+        "_id": "1",
+        "_user_name": "Maggiordomo"
+      },
+      {
+        "_id": "2",
+        "_user_name": "Pastore"
+      }
+    ]
   },
   {
     "_id": "U1613840652002",
@@ -151,8 +184,44 @@
     "_user_name": "Eolo",
     "_mail": "eolo@mail.it",
     "_sex": "M",
-    "_playlist": [],
+    "_playlist": [
+      {
+        "_id": "P1613927956126",
+        "_title": "test1",
+        "_songs": [
+          {
+            "_id": "9",
+            "_title": "Blue",
+            "_views": 200000,
+            "_length": 4.43,
+            "_artist": "Eiffel 65/Gabry Ponte",
+            "_genre": "House",
+            "_src": "https://p.scdn.co/mp3-preview/29dae6e5b44e50da50e1f3e84f34c1b247a30129"
+          }
+        ]
+      },
+      {
+        "_id": "P1613927961043",
+        "_title": "test2",
+        "_songs": []
+      },
+      {
+        "_id": "P1613927976408",
+        "_title": "test3",
+        "_songs": []
+      },
+      {
+        "_id": "P1613927980976",
+        "_title": "test4",
+        "_songs": []
+      }
+    ],
     "_followers": [],
-    "_followed": []
+    "_followed": [
+      {
+        "_id": "U1613583743602",
+        "_user_name": "Emily"
+      }
+    ]
   }
 ]
