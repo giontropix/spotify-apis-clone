@@ -9,6 +9,10 @@
       {
         "_id": "U1613583743602",
         "_user_name": "Emily"
+      },
+      {
+        "_id": "U1613918494426",
+        "_user_name": "Eolo"
       }
     ],
     "_followed": []
@@ -23,6 +27,10 @@
       {
         "_id": "U1613583743602",
         "_user_name": "Emily"
+      },
+      {
+        "_id": "U1613918494426",
+        "_user_name": "Eolo"
       }
     ],
     "_followed": []
@@ -37,6 +45,10 @@
       {
         "_id": "U1613583743602",
         "_user_name": "Emily"
+      },
+      {
+        "_id": "U1613918494426",
+        "_user_name": "Eolo"
       }
     ],
     "_followed": []
@@ -63,12 +75,7 @@
         ]
       }
     ],
-    "_followers": [
-      {
-        "_id": "U1613918494426",
-        "_user_name": "Eolo"
-      }
-    ],
+    "_followers": [],
     "_followed": [
       {
         "_id": "0",
@@ -219,8 +226,16 @@
     "_followers": [],
     "_followed": [
       {
-        "_id": "U1613583743602",
-        "_user_name": "Emily"
+        "_id": "2",
+        "_user_name": "Pastore"
+      },
+      {
+        "_id": "0",
+        "_user_name": "Turi"
+      },
+      {
+        "_id": "1",
+        "_user_name": "Maggiordomo"
       }
     ]
   }

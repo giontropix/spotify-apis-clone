@@ -41,23 +41,11 @@ export class User {
         return this._playlist;
     }
 
-    set playlist(value: Playlist[]) {
-        this._playlist = value;
-    }
-
     get followers(): Follower[] {
         return this._followers;
     }
 
-    set followers(value: Follower[]) {
-        this._followers = value;
-    }
-
     get followed(): Follower[] {
         return this._followed;
-    }
-
-    set followed(value: Follower[]) {
-        this._followed = value;
     }
 }

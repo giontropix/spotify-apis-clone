@@ -10,11 +10,6 @@ export class Song {
         private _album?: string
     ) {
     }
-
-    get uri(): string {
-        return this._src
-    }
-
     get id(): string {
         return this._id;
     }
@@ -37,14 +32,6 @@ export class Song {
 
     set views(value: number) {
         this._views = value;
-    }
-
-    get length(): number {
-        return this._length;
-    }
-
-    set length(value: number) {
-        this._length = value;
     }
 
     get artist(): string {

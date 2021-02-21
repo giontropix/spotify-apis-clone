@@ -26,8 +26,4 @@ export class Playlist {
     get songs(): Song[] {
         return this._songs;
     }
-
-    set songs(value: Song[]) {
-        this._songs = value;
-    }
 }
