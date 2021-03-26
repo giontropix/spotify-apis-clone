@@ -1,5 +1,5 @@
 import express, {Request, Response} from "express";
-import {listOfUsers, readFileMiddleware, writeToFile} from "../utils/manageUsersFromJSON";
+import {listOfUsers} from "../utils/manageUsersFromJSON";
 import {User} from "../models/User";
 import {playlists} from "./playlists";
 import {followers} from "./followers";

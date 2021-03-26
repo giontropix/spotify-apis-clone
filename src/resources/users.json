@@ -5,12 +5,7 @@
     "_mail": "turidogiappuni@mail.it",
     "_sex": "M",
     "_playlist": [],
-    "_followers": [
-      {
-        "_id": "U1613583743602",
-        "_user_name": "Emily"
-      }
-    ],
+    "_followers": [],
     "_followed": []
   },
   {
@@ -19,12 +14,7 @@
     "_mail": "aula145@mail.it",
     "_sex": "M",
     "_playlist": [],
-    "_followers": [
-      {
-        "_id": "U1613583743602",
-        "_user_name": "Emily"
-      }
-    ],
+    "_followers": [],
     "_followed": []
   },
   {
@@ -33,12 +23,7 @@
     "_mail": "ilpastore@mail.it",
     "_sex": "M",
     "_playlist": [],
-    "_followers": [
-      {
-        "_id": "U1613583743602",
-        "_user_name": "Emily"
-      }
-    ],
+    "_followers": [],
     "_followed": []
   },
   {
@@ -48,34 +33,64 @@
     "_sex": "F",
     "_playlist": [
       {
-        "_id": "P1613823733999",
-        "_title": "test",
-        "_songs": [
-          {
-            "_id": "7",
-            "_title": "Astronomia",
-            "_views": 40000,
-            "_length": 3.59,
-            "_artist": "Vicetone/Tony Igy",
-            "_genre": "House",
-            "_src": "https://p.scdn.co/mp3-preview/76175ba50f727200e8057b74eeb9459120d3f4a4"
-          }
-        ]
+        "_id": "P1614268194256",
+        "_title": "Summer 2020",
+        "_songs": []
+      },
+      {
+        "_id": "P1614268211227",
+        "_title": "Sun, Beach and Relax",
+        "_songs": []
+      },
+      {
+        "_id": "P1614268222218",
+        "_title": "Gym time!",
+        "_songs": []
+      },
+      {
+        "_id": "P1614268503240",
+        "_title": "Disco '80",
+        "_songs": []
       }
     ],
-    "_followers": [],
+    "_followers": [
+      {
+        "_id": "U0123",
+        "_user_name": "Sally"
+      },
+      {
+        "_id": "U0124",
+        "_user_name": "Henry"
+      },
+      {
+        "_id": "U0125",
+        "_user_name": "Kim"
+      }
+    ],
     "_followed": [
       {
-        "_id": "0",
-        "_user_name": "Turi"
+        "_id": "U1613840652002",
+        "_user_name": "Sharon"
       },
       {
-        "_id": "1",
-        "_user_name": "Maggiordomo"
+        "_id": "U1613840652006",
+        "_user_name": "Frances"
       },
       {
-        "_id": "2",
-        "_user_name": "Pastore"
+        "_id": "U1613918494426",
+        "_user_name": "Eolo"
+      },
+      {
+        "_id": "U0123",
+        "_user_name": "Sally"
+      },
+      {
+        "_id": "U0124",
+        "_user_name": "Henry"
+      },
+      {
+        "_id": "U0125",
+        "_user_name": "Kim"
       }
     ]
   },
@@ -93,6 +108,10 @@
       {
         "_id": "U1613849459208",
         "_user_name": "aaa"
+      },
+      {
+        "_id": "U1613583743602",
+        "_user_name": "Emily"
       }
     ],
     "_followed": [
@@ -148,6 +167,10 @@
       {
         "_id": "U1613849459208",
         "_user_name": "aaa"
+      },
+      {
+        "_id": "U1613583743602",
+        "_user_name": "Emily"
       }
     ],
     "_followed": []
@@ -206,7 +229,54 @@
         "_songs": []
       }
     ],
-    "_followers": [],
+    "_followers": [
+      {
+        "_id": "U1613583743602",
+        "_user_name": "Emily"
+      }
+    ],
+    "_followed": []
+  },
+  {
+    "_id": "U0123",
+    "_user_name": "Sally",
+    "_mail": "sally@mail.it",
+    "_sex": "F",
+    "_playlist": [],
+    "_followers": [
+      {
+        "_id": "U1613583743602",
+        "_user_name": "Emily"
+      }
+    ],
+    "_followed": []
+  },
+  {
+    "_id": "U0124",
+    "_user_name": "Henry",
+    "_mail": "henry@mail.it",
+    "_sex": "M",
+    "_playlist": [],
+    "_followers": [
+      {
+        "_id": "U1613583743602",
+        "_user_name": "Emily"
+      }
+    ],
+    "_followed": []
+  },
+  {
+    "_id": "U0125",
+    "_user_name": "Kim",
+    "_mail": "kim@mail.it",
+    "_sex": "M",
+    "_playlist": [],
+    "_followers": [
+      {
+        "_id": "U1613583743602",
+        "_user_name": "Emily"
+      }
+    ],
     "_followed": []
   }
 ]

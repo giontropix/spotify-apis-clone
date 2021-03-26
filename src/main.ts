@@ -28,7 +28,27 @@ const options: cors.CorsOptions = {
     origin: "http://localhost:4200",
     preflightContinue: false,
 };
+const optionsIonic: cors.CorsOptions = {
+    allowedHeaders: [
+        'Origin',
+        'X-Requested-With',
+        'Content-Type',
+        'Accept',
+        'X-Access-Token',
+        'mail',
+        'password',
+        'access_token',
+        'refresh_token',
+        "access_token",
+        "refresh_token"
+    ],
+    credentials: true,
+    methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+    origin: "http://localhost:8100",
+    preflightContinue: false,
+};
 app.use(cors(options));
+app.use(cors(optionsIonic));
 app.use(bodyParser.urlencoded({extended: true}));
 
 const client = redis.createClient();
