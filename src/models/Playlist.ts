@@ -1,9 +1,10 @@
-import {Song} from "./Song";
+import {UserSong} from "./UserSong";
 
 export class Playlist {
-    constructor(private _id: string,
-                private _title: string,
-                private _songs: Song[] = [],
+    constructor(
+        private _id: string,
+        private _title: string,
+        private _songs: UserSong[] = [],
     ) {
     }
 
@@ -23,7 +24,7 @@ export class Playlist {
         this._title = value;
     }
 
-    get songs(): Song[] {
+    get songs(): UserSong[] {
         return this._songs;
     }
 }

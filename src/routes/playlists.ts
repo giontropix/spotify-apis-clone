@@ -7,6 +7,8 @@ import {User} from "../models/User";
 import {Playlist} from "../models/Playlist";
 import {readSongsFileMiddleware, songsList} from "../utils/manageSongsFromJSON";
 import {Song} from "../models/Song";
+import {UserSong} from "../models/UserSong";
+import {songs} from "./songs";
 
 const router = express.Router({mergeParams: true});
 
@@ -38,6 +40,16 @@ router.get("/:playlistId", ({params:{id, playlistId}}:Request, res:Response) => 
     return res.status(200).json(playlist);
 })
 
+//VEDERE TUTTE LE CANZONI DI UNA PLAYLIST
+router.get("/:playlistId/songs", readSongsFileMiddleware, ({params:{id, playlistId}, query:{offset, limit}}:Request, res:Response) => {
+    const currentUser = listOfUsers.find((user: User) => user.id === id)
+    if(!currentUser) return res.status(404).json({error: "User not found"})
+    const playlist = currentUser.playlist.find((list: Playlist) => list.id === playlistId)
+    if(!playlist) return res.status(404).json({error: "Playlist not found"})
+    const playlistSongs = playlist.songs.map((({id}) => songsList.find(( {id: songId}) => songId === id)))
+    return res.status(200).json(playlistSongs);
+})
+
 //ELIMINARE UNA PLAYLIST
 router.delete("/:playlistId", ({params:{id, playlistId}}: Request, res:Response) => {
     const currentUser = listOfUsers.find((user: User) => user.id === id)
@@ -57,8 +69,9 @@ router.put("/:idPlaylist/songs", readSongsFileMiddleware, body("songId").notEmpt
     if(!playlist) return res.status(404).json({error: "Playlist not found"})
     const song = songsList.find((item: Song ) => item.id === songId)
     if(!song) return res.status(404).json({error: "Song not found"})
-    if(playlist.songs.find((item: Song) => item.id === song.id)) return res.status(403).json({error: 'This song is already in the selected playlist'})
-    currentUser.playlist.find(({id}:Playlist) => id === idPlaylist)?.songs.push(song)
+    if(playlist.songs.find(({id}: UserSong) => id === song.id)) return res.status(403).json({error: 'This song is already in the selected playlist'})
+    const userSong: UserSong = new UserSong(song.id, 0)
+    currentUser.playlist.find(({id}:Playlist) => id === idPlaylist)?.songs.push(userSong)
     writeToFile()
     return res.status(201).json({message: `${song.title} added to playlist ${playlist.title}!`})
 })
@@ -69,7 +82,7 @@ router.delete("/:idPlaylist/songs/:songId", ({params:{ id, idPlaylist, songId }}
     if(!currentUser) return res.status(404).json({error: "User not found"})
     const playlist = currentUser.playlist.find((playlist: Playlist) => playlist.id === idPlaylist)
     if(!playlist) return res.status(404).json({error: "Playlist not found"})
-    const songIndex = playlist.songs.findIndex((song: Song) => song.id === songId)
+    const songIndex = playlist.songs.findIndex((song: UserSong) => song.id === songId)
     if(songIndex === -1) return res.status(404).json({error: "Song not found"})
     currentUser.playlist.find((playlist: Playlist) => playlist.id === idPlaylist)?.songs.splice(songIndex, 1);
     writeToFile()
