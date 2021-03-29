@@ -1,5 +1,6 @@
 import {Playlist} from "./Playlist";
 import {Follower} from "./Follower";
+import {Played} from "./Played";
 
 export class User {
     constructor(
@@ -9,7 +10,8 @@ export class User {
         private _sex: string,
         private _playlist: Playlist[] = [],
         private _followers: Follower[] = [],
-        private _followed: Follower[] = []
+        private _followed: Follower[] = [],
+        private _lastTenSongsPlayed: Played[] = new Array(10)
     ) {
     }
 
@@ -47,5 +49,13 @@ export class User {
 
     get followed(): Follower[] {
         return this._followed;
+    }
+
+    get lastTenSongsPlayed(): Played[] {
+        return this._lastTenSongsPlayed;
+    }
+
+    set lastTenSongsPlayed(value: Played[]) {
+        this._lastTenSongsPlayed = value;
     }
 }

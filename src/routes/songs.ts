@@ -7,14 +7,6 @@ const router = express.Router();
 
 //router.get("/", readSongsFileMiddleware, (_:Request, res:Response) => res.status(200).json(songsList) )
 
-router.put('/:id_song', readSongsFileMiddleware, ({params: {id_song}}:Request, res:Response) => {
-    const song = songsList.find(({id}) => id === id_song)
-    if(!song) return res.status(404).json({message: "Song not found!"})
-    song.views += 1
-    writeSongsToFile()
-    res.status(201).json({message: "Views increased"})
-})
-
 router.get('/:id_song', readSongsFileMiddleware, ({params: {id_song}}:Request, res:Response) => {
     let songById:Song | undefined = songsList.find( ({id}) => id === id_song)
     songById && res.status(200).json(songById) || res.status(404).json({message: "Song not found!"})

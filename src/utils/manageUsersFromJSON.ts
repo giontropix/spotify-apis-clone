@@ -4,6 +4,7 @@ import express from "express";
 import {Playlist} from "../models/Playlist";
 import {Follower} from "../models/Follower";
 import {Song} from "../models/Song";
+import {Played} from "../models/Played";
 
 const path: string = "src/resources/users.json";
 
@@ -26,6 +27,8 @@ export const readFile = () => {
                 if(foll) return new Follower(foll._id, foll._user_name)
             }), user._followed.map((foll: any) => {
                 if(foll) return new Follower(foll._id, foll._user_name)
+            }), user._lastTenSongsPlayed.map((played: any) => {
+                if (played) return new Played(played._id, played._genre)
             }))
         );
     } catch (err) {

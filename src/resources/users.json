@@ -6,7 +6,8 @@
     "_sex": "M",
     "_playlist": [],
     "_followers": [],
-    "_followed": []
+    "_followed": [],
+    "_lastTenSongsPlayed": []
   },
   {
     "_id": "1",
@@ -15,7 +16,8 @@
     "_sex": "M",
     "_playlist": [],
     "_followers": [],
-    "_followed": []
+    "_followed": [],
+    "_lastTenSongsPlayed": []
   },
   {
     "_id": "2",
@@ -24,7 +26,8 @@
     "_sex": "M",
     "_playlist": [],
     "_followers": [],
-    "_followed": []
+    "_followed": [],
+    "_lastTenSongsPlayed": []
   },
   {
     "_id": "U1613583743602",
@@ -37,8 +40,8 @@
         "_title": "Summer 2020",
         "_songs": [
           {
-            "_id": "0",
-            "_views": 40000
+            "_id": "1",
+            "_views": 0
           }
         ]
       },
@@ -97,7 +100,8 @@
         "_id": "U0125",
         "_user_name": "Kim"
       }
-    ]
+    ],
+    "_lastTenSongsPlayed": []
   },
   {
     "_id": "U1613840652002",
@@ -152,7 +156,8 @@
         "_id": "U1613840652009",
         "_user_name": "Angela"
       }
-    ]
+    ],
+    "_lastTenSongsPlayed": []
   },
   {
     "_id": "U1613840652006",
@@ -178,7 +183,8 @@
         "_user_name": "Emily"
       }
     ],
-    "_followed": []
+    "_followed": [],
+    "_lastTenSongsPlayed": []
   },
   {
     "_id": "U1613840652007",
@@ -200,7 +206,8 @@
         "_user_name": "aaa"
       }
     ],
-    "_followed": []
+    "_followed": [],
+    "_lastTenSongsPlayed": []
   },
   {
     "_id": "U1613918494426",
@@ -240,7 +247,8 @@
         "_user_name": "Emily"
       }
     ],
-    "_followed": []
+    "_followed": [],
+    "_lastTenSongsPlayed": []
   },
   {
     "_id": "U0123",
@@ -254,7 +262,8 @@
         "_user_name": "Emily"
       }
     ],
-    "_followed": []
+    "_followed": [],
+    "_lastTenSongsPlayed": []
   },
   {
     "_id": "U0124",
@@ -268,7 +277,8 @@
         "_user_name": "Emily"
       }
     ],
-    "_followed": []
+    "_followed": [],
+    "_lastTenSongsPlayed": []
   },
   {
     "_id": "U0125",
@@ -282,6 +292,7 @@
         "_user_name": "Emily"
       }
     ],
-    "_followed": []
+    "_followed": [],
+    "_lastTenSongsPlayed": []
   }
 ]
