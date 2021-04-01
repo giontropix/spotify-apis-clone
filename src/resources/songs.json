@@ -2,7 +2,7 @@
   {
     "_id": "0",
     "_title": "Papà Castoro REmix",
-    "_views": 1,
+    "_views": 4,
     "_length": 6.11,
     "_artist": "MVRS",
     "_genre": "Psyco",
@@ -11,7 +11,7 @@
   {
     "_id": "1",
     "_title": "Mi stuppai na fanta",
-    "_views": 40000,
+    "_views": 1,
     "_length": 2.3,
     "_artist": "Brigantony",
     "_genre": "Folk popolare",
@@ -20,7 +20,7 @@
   {
     "_id": "2",
     "_title": "Occhi a pampina",
-    "_views": 40000,
+    "_views": 0,
     "_length": 4.44,
     "_artist": "Tinturia",
     "_genre": "Folk popolare",
@@ -29,7 +29,7 @@
   {
     "_id": "3",
     "_title": "Nopakytoman",
-    "_views": 40000,
+    "_views": 0,
     "_length": 3.59,
     "_artist": "Brigantiny",
     "_genre": "Rock",
@@ -38,7 +38,7 @@
   {
     "_id": "4",
     "_title": "Animals",
-    "_views": 30,
+    "_views": 0,
     "_length": 1.3,
     "_artist": "Martin Garrix",
     "_genre": "EDM",
@@ -47,7 +47,7 @@
   {
     "_id": "5",
     "_title": "Parasite Eve",
-    "_views": 40000,
+    "_views": 0,
     "_length": 3.59,
     "_artist": "Bring me the horizon",
     "_genre": "Rock",
@@ -56,7 +56,7 @@
   {
     "_id": "6",
     "_title": "Teardrops",
-    "_views": 40000,
+    "_views": 0,
     "_length": 3.59,
     "_artist": "Bring me the horizon",
     "_genre": "Rock",
@@ -65,7 +65,7 @@
   {
     "_id": "7",
     "_title": "Astronomia",
-    "_views": 40000,
+    "_views": 0,
     "_length": 3.59,
     "_artist": "Vicetone/Tony Igy",
     "_genre": "House",
@@ -74,7 +74,7 @@
   {
     "_id": "8",
     "_title": "Anima Libera",
-    "_views": 100000,
+    "_views": 0,
     "_length": 4.01,
     "_artist": "DJ Provenzano/Emi",
     "_genre": "House",
@@ -83,7 +83,7 @@
   {
     "_id": "9",
     "_title": "Blue",
-    "_views": 200000,
+    "_views": 0,
     "_length": 4.43,
     "_artist": "Eiffel 65/Gabry Ponte",
     "_genre": "House",
@@ -92,7 +92,7 @@
   {
     "_id": "10",
     "_title": "Generale",
-    "_views": 200000,
+    "_views": 0,
     "_length": 4.21,
     "_artist": "De Gregori",
     "_genre": "Rock",
@@ -101,7 +101,7 @@
   {
     "_id": "11",
     "_title": "Rimmel",
-    "_views": 200000,
+    "_views": 0,
     "_length": 3.41,
     "_artist": "De Gregori",
     "_genre": "Rock",
@@ -110,7 +110,7 @@
   {
     "_id": "12",
     "_title": "La leva calcistica della classe '68",
-    "_views": 40000,
+    "_views": 0,
     "_length": 4.18,
     "_artist": "De Gregori",
     "_genre": "Rock",
@@ -119,7 +119,7 @@
   {
     "_id": "13",
     "_title": "L'isola che non c'è",
-    "_views": 40000,
+    "_views": 0,
     "_length": 4.01,
     "_artist": "Bennato",
     "_genre": "Rock",
@@ -128,7 +128,7 @@
   {
     "_id": "14",
     "_title": "Il gatto e la volpe",
-    "_views": 40000,
+    "_views": 0,
     "_length": 4.01,
     "_artist": "Bennato",
     "_genre": "Rock",
@@ -137,7 +137,7 @@
   {
     "_id": "15",
     "_title": "Punk Rock Girl",
-    "_views": 40000,
+    "_views": 0,
     "_length": 2.39,
     "_artist": "The dead milkman",
     "_genre": "Punk",
@@ -146,7 +146,7 @@
   {
     "_id": "16",
     "_title": "Amour Toujours",
-    "_views": 40000,
+    "_views": 0,
     "_length": 4.02,
     "_artist": "Gigi D'Agostino",
     "_genre": "House",
@@ -155,7 +155,7 @@
   {
     "_id": "17",
     "_title": "Numb",
-    "_views": 40000,
+    "_views": 0,
     "_length": 3.06,
     "_artist": "Linkin Park",
     "_genre": "Rock",
@@ -164,7 +164,7 @@
   {
     "_id": "18",
     "_title": "In the end",
-    "_views": 40000,
+    "_views": 0,
     "_length": 3.36,
     "_artist": "Linkin Park",
     "_genre": "Rock",
@@ -173,7 +173,7 @@
   {
     "_id": "19",
     "_title": "Where is my mind?",
-    "_views": 40000,
+    "_views": 0,
     "_length": 3.57,
     "_artist": "Pixies",
     "_genre": "Rock",
@@ -182,7 +182,7 @@
   {
     "_id": "20",
     "_title": "Don't stop",
-    "_views": 40000,
+    "_views": 0,
     "_length": 4.29,
     "_artist": "Red Hot Chili Peppers",
     "_genre": "Rock",
@@ -191,7 +191,7 @@
   {
     "_id": "21",
     "_title": "Californication",
-    "_views": 40000,
+    "_views": 0,
     "_length": 5.29,
     "_artist": "Red Hot Chili Peppers",
     "_genre": "Rock",
@@ -200,7 +200,7 @@
   {
     "_id": "22",
     "_title": "Comfortably Numb",
-    "_views": 40000,
+    "_views": 0,
     "_length": 6.22,
     "_artist": "Pink Floyd",
     "_genre": "Rock",
@@ -209,7 +209,7 @@
   {
     "_id": "23",
     "_title": "Wish you were here",
-    "_views": 40000,
+    "_views": 0,
     "_length": 5.34,
     "_artist": "Pink Floyd",
     "_genre": "Rock",
@@ -218,7 +218,7 @@
   {
     "_id": "24",
     "_title": "Space Oddity",
-    "_views": 40000,
+    "_views": 0,
     "_length": 5.18,
     "_artist": "David Bowie",
     "_genre": "Rock",
@@ -227,7 +227,7 @@
   {
     "_id": "25",
     "_title": "Heroes",
-    "_views": 40000,
+    "_views": 0,
     "_length": 6.11,
     "_artist": "David Bowie",
     "_genre": "Rock",

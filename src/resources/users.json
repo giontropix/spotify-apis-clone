@@ -41,7 +41,7 @@
         "_songs": [
           {
             "_id": "1",
-            "_views": 0
+            "_views": 2
           }
         ]
       },
@@ -101,7 +101,28 @@
         "_user_name": "Kim"
       }
     ],
-    "_lastTenSongsPlayed": []
+    "_lastTenSongsPlayed": [
+      {
+        "_id": "0",
+        "_genre": "Psyco"
+      },
+      {
+        "_id": "0",
+        "_genre": "Psyco"
+      },
+      {
+        "_id": "1",
+        "_genre": "Folk popolare"
+      },
+      {
+        "_id": "1",
+        "_genre": "Folk popolare"
+      },
+      {
+        "_id": "1",
+        "_genre": "Folk popolare"
+      }
+    ]
   },
   {
     "_id": "U1613840652002",

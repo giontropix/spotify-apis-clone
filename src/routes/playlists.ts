@@ -5,9 +5,10 @@ import express, {Request, Response} from "express";
 import {listOfUsers, writeToFile} from "../utils/manageUsersFromJSON";
 import {User} from "../models/User";
 import {Playlist} from "../models/Playlist";
-import {readSongsFileMiddleware, songsList} from "../utils/manageSongsFromJSON";
+import {readSongsFileMiddleware, songsList, writeSongsToFile} from "../utils/manageSongsFromJSON";
 import {Song} from "../models/Song";
 import {UserSong} from "../models/UserSong";
+import {Played} from "../models/Played";
 
 const router = express.Router({mergeParams: true});
 
@@ -69,10 +70,28 @@ router.put("/:idPlaylist/songs", readSongsFileMiddleware, body("songId").notEmpt
     const song = songsList.find((item: Song ) => item.id === songId)
     if(!song) return res.status(404).json({error: "Song not found"})
     if(playlist.songs.find(({id}: UserSong) => id === song.id)) return res.status(403).json({error: 'This song is already in the selected playlist'})
-    const userSong: UserSong = new UserSong(song.id, 0)
+    const userSong: UserSong = new UserSong(song.id, 0, song.genre)
     currentUser.playlist.find(({id}:Playlist) => id === idPlaylist)?.songs.push(userSong)
     writeToFile()
     return res.status(201).json({message: `${song.title} added to playlist ${playlist.title}!`})
+})
+
+//INCREMENTA IL NUMERO DI ASCOLTI DI UNA CANZONE
+router.put("/:idPlaylist/songs/player", ({params:{ id, idPlaylist }, body:{songId}}:Request, res:Response) => {
+    const currentUser = listOfUsers.find((user:User) => user.id === id)
+    if(!currentUser) return res.status(404).json({error: "User not found"})
+    const playlist = currentUser.playlist.find((playlist: Playlist) => playlist.id === idPlaylist)
+    if(!playlist) return res.status(404).json({error: "Playlist not found"})
+    const song = songsList.find((song: Song) => song.id === songId);
+    if(!song) return res.status(404).json({error: "User song not found"});
+    const songFromPlaylist = playlist.songs.find((song: UserSong) => song.id === songId);
+    if(!songFromPlaylist) return res.status(404).json({error: "User song not found"});
+    currentUser.lastTenSongsPlayed.push(new Played(songId, song.genre))
+    song.views += 1
+    songFromPlaylist.views += 1;
+    writeToFile()
+    writeSongsToFile()
+    return res.status(201).json({message: "View increased"})
 })
 
 //RIMUOVI CANZONE DA PLAYLIST
