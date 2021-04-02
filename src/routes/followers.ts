@@ -48,7 +48,7 @@ router.delete("/followed/:userIdToUnfollow", ({params:{id, userIdToUnfollow}}:Re
     const userToUnfollowIndex = currentUser.followed.findIndex((user: Follower) => user.id === userIdToUnfollow)
     if(userToUnfollowIndex === -1) return res.status(404).json({error: "User to unfollow not found"})
     const currentUserIndex = userToUnfollow.followers.findIndex((user: Follower) => user.id === id)
-    if(currentUserIndex === -1) return res.status(404).json({error: "User not found"})
+    if(currentUserIndex === -1) return res.status(404).json({error: "User index not found"})
     currentUser.followed.splice(userToUnfollowIndex, 1)
     userToUnfollow.followers.splice(currentUserIndex, 1)
     writeToFile()
