@@ -34,3 +34,10 @@ export const updateListeningStats = (user: User, song: Song) => {
     user.lastSongsPlayed.push(new Played(song.id, song.genre))
     song.views += 1
 }
+
+export const getMostListenedGenres = (user: User) => {
+    const userListenedGenres = user.lastSongsPlayed.map(item => item.genre);
+    const uniqueGenres = [...new Set(userListenedGenres)]
+    const countGenreOccurrences = (arr: string[], val: string) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+    return uniqueGenres.map((genre) => ({genre, value: countGenreOccurrences(userListenedGenres, genre)})).sort((a, b) => b.value - a.value).slice(0,3)
+}

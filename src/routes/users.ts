@@ -4,7 +4,7 @@ import {User} from "../models/User";
 import {playlists} from "./playlists";
 import {followers} from "./followers";
 import {readSongsFileMiddleware, songsList, writeSongsToFile} from "../utils/manageSongsFromJSON";
-import {updateListeningStats} from "../utils/apisHelpers";
+import {getMostListenedGenres, updateListeningStats} from "../utils/apisHelpers";
 
 const router = express.Router({mergeParams: true});
 
@@ -29,6 +29,13 @@ router.put('/:id', readSongsFileMiddleware, ({params: {id}, body:{song_id}}:Requ
     writeSongsToFile()
     writeToFile()
     res.status(201).json({message: "Views increased"})
+})
+
+router.get("/:id/suggestedSongs", readSongsFileMiddleware, ({params: {id}}: Request, res:Response) => {
+    const user = listOfUsers.find((user: User) => user.id === id)
+    if(!user) return res.status(404).json({error: "User not found"})
+    const c = getMostListenedGenres(user).map(genre => songsList.filter((song) => song.genre === genre.genre)).reduce((acc, val) => acc.concat(val), []);
+    res.status(200).json([...c]);
 })
 
 export {router as users }
