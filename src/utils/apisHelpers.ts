@@ -3,6 +3,9 @@ import {NextFunction, Request, Response} from "express";
 import bluebird from "bluebird";
 import redis from "redis";
 import {TokenBase, TokenGenerator} from "ts-token-generator";
+import {User} from "../models/User";
+import {Played} from "../models/Played";
+import {Song} from "../models/Song";
 
 const client: any = bluebird.promisifyAll(redis.createClient());
 const tokgen = new TokenGenerator({bitSize: 512, baseEncoding: TokenBase.BASE62});
@@ -24,4 +27,10 @@ export const checkExpiredToken = async ({headers: {access_token, refresh_token}}
     refresh_token = tokgen.generate()
     client.set(refresh_token, JSON.stringify(mail), 'EX', 86400*7);
     res.status(201).json({access_token, refresh_token});
+}
+
+export const updateListeningStats = (user: User, song: Song) => {
+    if (user.lastSongsPlayed.length === 10) user.lastSongsPlayed.shift()
+    user.lastSongsPlayed.push(new Played(song.id, song.genre))
+    song.views += 1
 }

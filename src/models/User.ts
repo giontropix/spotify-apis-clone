@@ -11,7 +11,7 @@ export class User {
         private _playlist: Playlist[] = [],
         private _followers: Follower[] = [],
         private _followed: Follower[] = [],
-        private _lastTenSongsPlayed: Played[] = new Array(10)
+        private _lastSongsPlayed: Played[] = []
     ) {
     }
 
@@ -51,11 +51,7 @@ export class User {
         return this._followed;
     }
 
-    get lastTenSongsPlayed(): Played[] {
-        return this._lastTenSongsPlayed;
-    }
-
-    set lastTenSongsPlayed(value: Played[]) {
-        this._lastTenSongsPlayed = value;
+    get lastSongsPlayed(): Played[] {
+        return this._lastSongsPlayed;
     }
 }

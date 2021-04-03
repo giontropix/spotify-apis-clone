@@ -1,5 +1,5 @@
 export class UserSong {
-    constructor(private _id: string, private _views: number, private _genre: string ) {
+    constructor(private _id: string, private _genre: string ) {
     }
     get id(): string {
         return this._id;
@@ -7,14 +7,6 @@ export class UserSong {
 
     set id(value: string) {
         this._id = value;
-    }
-
-    get views(): number {
-        return this._views;
-    }
-
-    set views(value: number) {
-        this._views = value;
     }
 
     get genre(): string {

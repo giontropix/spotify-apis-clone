@@ -4,7 +4,7 @@ import {User} from "../models/User";
 import {playlists} from "./playlists";
 import {followers} from "./followers";
 import {readSongsFileMiddleware, songsList, writeSongsToFile} from "../utils/manageSongsFromJSON";
-import {Played} from "../models/Played";
+import {updateListeningStats} from "../utils/apisHelpers";
 
 const router = express.Router({mergeParams: true});
 
@@ -25,8 +25,7 @@ router.put('/:id', readSongsFileMiddleware, ({params: {id}, body:{song_id}}:Requ
     if(!user) return res.status(404).json({error: "User not found"})
     const song = songsList.find(({id}) => id === song_id)
     if(!song) return res.status(404).json({message: "Song not found!"})
-    user.lastTenSongsPlayed.push(new Played(song_id, song.genre))
-    song.views += 1
+    updateListeningStats(user, song)
     writeSongsToFile()
     writeToFile()
     res.status(201).json({message: "Views increased"})

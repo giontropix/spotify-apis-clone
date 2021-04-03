@@ -1,6 +1,6 @@
 //CREARE UNA NUOVA PLAYLIST
 import {body} from "express-validator";
-import {handleErrors} from "../utils/apisHelpers";
+import {handleErrors, updateListeningStats} from "../utils/apisHelpers";
 import express, {Request, Response} from "express";
 import {listOfUsers, writeToFile} from "../utils/manageUsersFromJSON";
 import {User} from "../models/User";
@@ -8,7 +8,6 @@ import {Playlist} from "../models/Playlist";
 import {readSongsFileMiddleware, songsList, writeSongsToFile} from "../utils/manageSongsFromJSON";
 import {Song} from "../models/Song";
 import {UserSong} from "../models/UserSong";
-import {Played} from "../models/Played";
 
 const router = express.Router({mergeParams: true});
 
@@ -70,7 +69,7 @@ router.put("/:idPlaylist/songs", readSongsFileMiddleware, body("songId").notEmpt
     const song = songsList.find((item: Song ) => item.id === songId)
     if(!song) return res.status(404).json({error: "Song not found"})
     if(playlist.songs.find(({id}: UserSong) => id === song.id)) return res.status(403).json({error: 'This song is already in the selected playlist'})
-    const userSong: UserSong = new UserSong(song.id, 0, song.genre)
+    const userSong: UserSong = new UserSong(song.id, song.genre)
     currentUser.playlist.find(({id}:Playlist) => id === idPlaylist)?.songs.push(userSong)
     writeToFile()
     return res.status(201).json({message: `${song.title} added to playlist ${playlist.title}!`})
@@ -84,11 +83,7 @@ router.put("/:idPlaylist/songs/player", ({params:{ id, idPlaylist }, body:{songI
     if(!playlist) return res.status(404).json({error: "Playlist not found"})
     const song = songsList.find((song: Song) => song.id === songId);
     if(!song) return res.status(404).json({error: "User song not found"});
-    const songFromPlaylist = playlist.songs.find((song: UserSong) => song.id === songId);
-    if(!songFromPlaylist) return res.status(404).json({error: "User song not found"});
-    currentUser.lastTenSongsPlayed.push(new Played(songId, song.genre))
-    song.views += 1
-    songFromPlaylist.views += 1;
+    updateListeningStats(currentUser, song);
     writeToFile()
     writeSongsToFile()
     return res.status(201).json({message: "View increased"})

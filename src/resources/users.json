@@ -32,7 +32,7 @@
         "_user_name": "Kim"
       }
     ],
-    "_lastTenSongsPlayed": []
+    "_lastSongsPlayed": []
   },
   {
     "_id": "1",
@@ -42,7 +42,7 @@
     "_playlist": [],
     "_followers": [],
     "_followed": [],
-    "_lastTenSongsPlayed": []
+    "_lastSongsPlayed": []
   },
   {
     "_id": "2",
@@ -52,7 +52,7 @@
     "_playlist": [],
     "_followers": [],
     "_followed": [],
-    "_lastTenSongsPlayed": []
+    "_lastSongsPlayed": []
   },
   {
     "_id": "U1613583743602",
@@ -97,12 +97,10 @@
         "_songs": [
           {
             "_id": "16",
-            "_views": 0,
             "_genre": "House"
           },
           {
             "_id": "8",
-            "_views": 0,
             "_genre": "House"
           }
         ]
@@ -148,64 +146,7 @@
         "_user_name": "Kim"
       }
     ],
-    "_lastTenSongsPlayed": [
-      {
-        "_id": "0",
-        "_genre": "Psyco"
-      },
-      {
-        "_id": "0",
-        "_genre": "Psyco"
-      },
-      {
-        "_id": "1",
-        "_genre": "Folk popolare"
-      },
-      {
-        "_id": "1",
-        "_genre": "Folk popolare"
-      },
-      {
-        "_id": "1",
-        "_genre": "Folk popolare"
-      },
-      {
-        "_id": "4",
-        "_genre": "EDM"
-      },
-      {
-        "_id": "6",
-        "_genre": "Rock"
-      },
-      {
-        "_id": "2",
-        "_genre": "Folk popolare"
-      },
-      {
-        "_id": "6",
-        "_genre": "Rock"
-      },
-      {
-        "_id": "2",
-        "_genre": "Folk popolare"
-      },
-      {
-        "_id": "5",
-        "_genre": "Rock"
-      },
-      {
-        "_id": "7",
-        "_genre": "House"
-      },
-      {
-        "_id": "1",
-        "_genre": "Folk popolare"
-      },
-      {
-        "_id": "0",
-        "_genre": "Psyco"
-      }
-    ]
+    "_lastSongsPlayed": []
   },
   {
     "_id": "U1613840652002",
@@ -261,7 +202,7 @@
         "_user_name": "Angela"
       }
     ],
-    "_lastTenSongsPlayed": []
+    "_lastSongsPlayed": []
   },
   {
     "_id": "U1613840652006",
@@ -288,7 +229,7 @@
       }
     ],
     "_followed": [],
-    "_lastTenSongsPlayed": []
+    "_lastSongsPlayed": []
   },
   {
     "_id": "U1613840652007",
@@ -311,7 +252,7 @@
       }
     ],
     "_followed": [],
-    "_lastTenSongsPlayed": []
+    "_lastSongsPlayed": []
   },
   {
     "_id": "U1613918494426",
@@ -352,7 +293,7 @@
       }
     ],
     "_followed": [],
-    "_lastTenSongsPlayed": []
+    "_lastSongsPlayed": []
   },
   {
     "_id": "U0123",
@@ -367,7 +308,7 @@
       }
     ],
     "_followed": [],
-    "_lastTenSongsPlayed": []
+    "_lastSongsPlayed": []
   },
   {
     "_id": "U0124",
@@ -382,7 +323,7 @@
       }
     ],
     "_followed": [],
-    "_lastTenSongsPlayed": []
+    "_lastSongsPlayed": []
   },
   {
     "_id": "U0125",
@@ -397,6 +338,6 @@
       }
     ],
     "_followed": [],
-    "_lastTenSongsPlayed": []
+    "_lastSongsPlayed": []
   }
 ]
