@@ -145,18 +145,6 @@
     ],
     "_lastSongsPlayed": [
       {
-        "_id": "0",
-        "_genre": "Psyco"
-      },
-      {
-        "_id": "6",
-        "_genre": "Rock"
-      },
-      {
-        "_id": "6",
-        "_genre": "Rock"
-      },
-      {
         "_id": "5",
         "_genre": "Rock"
       },
@@ -183,6 +171,18 @@
       {
         "_id": "4",
         "_genre": "EDM"
+      },
+      {
+        "_id": "2",
+        "_genre": "Folk popolare"
+      },
+      {
+        "_id": "4",
+        "_genre": "EDM"
+      },
+      {
+        "_id": "3",
+        "_genre": "Rock"
       }
     ]
   },

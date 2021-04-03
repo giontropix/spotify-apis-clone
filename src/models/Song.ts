@@ -7,6 +7,7 @@ export class Song {
         private _artist: string,
         private _genre: string,
         private _src: string,
+        private _date: number = Date.now(),
         private _album?: string
     ) {
     }
@@ -48,6 +49,10 @@ export class Song {
 
     set genre(value: string) {
         this._genre = value;
+    }
+
+    get date(): number {
+        return this._date;
     }
 
     get album(): string | undefined {

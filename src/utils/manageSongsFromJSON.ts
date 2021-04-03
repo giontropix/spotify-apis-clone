@@ -15,7 +15,7 @@ export const readFile = () => {
     try {
         const data = fs.readFileSync(path, "utf8");
         songsList = JSON.parse(data).map((song: any) => {
-            if (song) return new Song(song._id, song._title, song._views, song._length, song._artist, song._genre, song._src, song._album)
+            if (song) return new Song(song._id, song._title, song._views, song._length, song._artist, song._genre, song._src, song._date, song._album)
         });
     } catch (err) {
         if (err) return console.error(err)
