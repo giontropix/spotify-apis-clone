@@ -24,9 +24,9 @@ export const readFile = () => {
                     if(song) return new UserSong(song._id, song._genre)
                 }))
             }), user._followers.map((foll: any) => {
-                if(foll) return new Follower(foll._id, foll._user_name)
+                if(foll) return new Follower(foll._id, foll._user_name, foll._sex)
             }), user._followed.map((foll: any) => {
-                if(foll) return new Follower(foll._id, foll._user_name)
+                if(foll) return new Follower(foll._id, foll._user_name, foll._sex)
             }), user._lastSongsPlayed.map((played: any) => {
                 if (played) return new Played(played._id, played._genre)
             }))

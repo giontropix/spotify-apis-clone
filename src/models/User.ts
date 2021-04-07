@@ -54,4 +54,8 @@ export class User {
     get lastSongsPlayed(): Played[] {
         return this._lastSongsPlayed;
     }
+
+    get sex(): string {
+        return this._sex;
+    }
 }

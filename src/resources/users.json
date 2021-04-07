@@ -106,83 +106,92 @@
     "_followers": [
       {
         "_id": "U0123",
-        "_user_name": "Sally"
+        "_user_name": "Sally",
+        "_sex": "F"
       },
       {
         "_id": "U0124",
-        "_user_name": "Henry"
+        "_user_name": "Henry",
+        "_sex": "M"
       },
       {
         "_id": "U0125",
-        "_user_name": "Kim"
+        "_user_name": "Kim",
+        "_sex": "M"
       }
     ],
     "_followed": [
       {
         "_id": "U1613840652002",
-        "_user_name": "Sharon"
+        "_user_name": "Sharon",
+        "_sex": "F"
       },
       {
         "_id": "U1613840652006",
-        "_user_name": "Frances"
+        "_user_name": "Francesca",
+        "_sex": "F"
       },
       {
         "_id": "U1613918494426",
-        "_user_name": "Eolo"
+        "_user_name": "Eolo",
+        "_sex": "M"
       },
       {
         "_id": "U0123",
-        "_user_name": "Sally"
+        "_user_name": "Sally",
+        "_sex": "F"
       },
       {
         "_id": "U0124",
-        "_user_name": "Henry"
+        "_user_name": "Henry",
+        "_sex": "M"
       },
       {
         "_id": "U0125",
-        "_user_name": "Kim"
+        "_user_name": "Kim",
+        "_sex": "M"
       }
     ],
     "_lastSongsPlayed": [
       {
-        "_id": "5",
-        "_genre": "Rock"
-      },
-      {
-        "_id": "4",
-        "_genre": "EDM"
-      },
-      {
-        "_id": "4",
-        "_genre": "EDM"
-      },
-      {
-        "_id": "4",
-        "_genre": "EDM"
-      },
-      {
-        "_id": "4",
-        "_genre": "EDM"
-      },
-      {
-        "_id": "4",
-        "_genre": "EDM"
-      },
-      {
-        "_id": "4",
-        "_genre": "EDM"
+        "_id": "2",
+        "_genre": "Folk popolare"
       },
       {
         "_id": "2",
         "_genre": "Folk popolare"
       },
       {
-        "_id": "4",
-        "_genre": "EDM"
+        "_id": "2",
+        "_genre": "Folk popolare"
       },
       {
-        "_id": "3",
-        "_genre": "Rock"
+        "_id": "0",
+        "_genre": "Psyco"
+      },
+      {
+        "_id": "1",
+        "_genre": "Folk popolare"
+      },
+      {
+        "_id": "2",
+        "_genre": "Folk popolare"
+      },
+      {
+        "_id": "2",
+        "_genre": "Folk popolare"
+      },
+      {
+        "_id": "2",
+        "_genre": "Folk popolare"
+      },
+      {
+        "_id": "0",
+        "_genre": "Psyco"
+      },
+      {
+        "_id": "1",
+        "_genre": "Folk popolare"
       }
     ]
   },
@@ -195,49 +204,60 @@
     "_followers": [
       {
         "_id": "U1613849413909",
-        "_user_name": "asdolo"
+        "_user_name": "asdolo",
+        "_sex": "M"
       },
       {
         "_id": "U1613849459208",
-        "_user_name": "aaa"
+        "_user_name": "aaa",
+        "_sex": "F"
       },
       {
         "_id": "U1613583743602",
-        "_user_name": "Emily"
+        "_user_name": "Emily",
+        "_sex": "F"
       }
     ],
     "_followed": [
       {
         "_id": "0",
-        "_user_name": "Turi"
+        "_user_name": "Turi",
+        "_sex": "M"
       },
       {
         "_id": "1",
-        "_user_name": "Maggiordomo"
+        "_user_name": "Maggiordomo",
+        "_sex": "M"
       },
       {
         "_id": "2",
-        "_user_name": "Pastore"
+        "_user_name": "Pastore",
+        "_sex": "M"
       },
       {
         "_id": "U1613583743602",
-        "_user_name": "Emily"
+        "_user_name": "Emily",
+        "_sex": "F"
       },
       {
         "_id": "U1613840652006",
-        "_user_name": "Frances"
+        "_user_name": "Francesca",
+        "_sex": "F"
       },
       {
         "_id": "U1613840652007",
-        "_user_name": "Sorella Sharon"
+        "_user_name": "Sorella Sharon",
+        "_sex": "F"
       },
       {
         "_id": "U1613840652008",
-        "_user_name": "Simona"
+        "_user_name": "Simona",
+        "_sex": "F"
       },
       {
         "_id": "U1613840652009",
-        "_user_name": "Angela"
+        "_user_name": "Angela",
+        "_sex": "F"
       }
     ],
     "_lastSongsPlayed": []
@@ -251,19 +271,23 @@
     "_followers": [
       {
         "_id": "U1613840652002",
-        "_user_name": "Sharon"
+        "_user_name": "Sharon",
+        "_sex": "F"
       },
       {
         "_id": "U1613849413909",
-        "_user_name": "asdolo"
+        "_user_name": "asdolo",
+        "_sex": "M"
       },
       {
         "_id": "U1613849459208",
-        "_user_name": "aaa"
+        "_user_name": "aaa",
+        "_sex": "M"
       },
       {
         "_id": "U1613583743602",
-        "_user_name": "Emily"
+        "_user_name": "Emily",
+        "_sex": "F"
       }
     ],
     "_followed": [],
@@ -278,15 +302,18 @@
     "_followers": [
       {
         "_id": "U1613840652002",
-        "_user_name": "Sharon"
+        "_user_name": "Sharon",
+        "_sex": "F"
       },
       {
         "_id": "U1613849413909",
-        "_user_name": "asdolo"
+        "_user_name": "asdolo",
+        "_sex": "M"
       },
       {
         "_id": "U1613849459208",
-        "_user_name": "aaa"
+        "_user_name": "aaa",
+        "_sex": "M"
       }
     ],
     "_followed": [],
@@ -322,7 +349,8 @@
     "_followers": [
       {
         "_id": "U1613583743602",
-        "_user_name": "Emily"
+        "_user_name": "Emily",
+        "_sex": "F"
       }
     ],
     "_followed": [],
@@ -337,7 +365,8 @@
     "_followers": [
       {
         "_id": "U1613583743602",
-        "_user_name": "Emily"
+        "_user_name": "Emily",
+        "_sex": "F"
       }
     ],
     "_followed": [],
@@ -352,7 +381,8 @@
     "_followers": [
       {
         "_id": "U1613583743602",
-        "_user_name": "Emily"
+        "_user_name": "Emily",
+        "_sex": "F"
       }
     ],
     "_followed": [],
@@ -367,7 +397,8 @@
     "_followers": [
       {
         "_id": "U1613583743602",
-        "_user_name": "Emily"
+        "_user_name": "Emily",
+        "_sex": "F"
       }
     ],
     "_followed": [],
