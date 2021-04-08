@@ -101,6 +101,56 @@
             "_genre": "House"
           }
         ]
+      },
+      {
+        "_id": "P1617822408783",
+        "_title": "test",
+        "_songs": []
+      },
+      {
+        "_id": "P1617886715539",
+        "_title": "test1",
+        "_songs": []
+      },
+      {
+        "_id": "P1617886719989",
+        "_title": "test2",
+        "_songs": []
+      },
+      {
+        "_id": "P1617886723594",
+        "_title": "test3",
+        "_songs": []
+      },
+      {
+        "_id": "P1617886727406",
+        "_title": "test4",
+        "_songs": []
+      },
+      {
+        "_id": "P1617886731256",
+        "_title": "test5",
+        "_songs": []
+      },
+      {
+        "_id": "P1617886741233",
+        "_title": "test6",
+        "_songs": []
+      },
+      {
+        "_id": "P1617886748159",
+        "_title": "test7",
+        "_songs": []
+      },
+      {
+        "_id": "P1617886766520",
+        "_title": "test8",
+        "_songs": []
+      },
+      {
+        "_id": "P1617886771367",
+        "_title": "test9",
+        "_songs": []
       }
     ],
     "_followers": [
@@ -145,31 +195,10 @@
         "_id": "U0124",
         "_user_name": "Henry",
         "_sex": "M"
-      },
-      {
-        "_id": "U0125",
-        "_user_name": "Kim",
-        "_sex": "M"
       }
     ],
     "_lastSongsPlayed": [
       {
-        "_id": "2",
-        "_genre": "Folk popolare"
-      },
-      {
-        "_id": "2",
-        "_genre": "Folk popolare"
-      },
-      {
-        "_id": "2",
-        "_genre": "Folk popolare"
-      },
-      {
-        "_id": "0",
-        "_genre": "Psyco"
-      },
-      {
         "_id": "1",
         "_genre": "Folk popolare"
       },
@@ -192,6 +221,22 @@
       {
         "_id": "1",
         "_genre": "Folk popolare"
+      },
+      {
+        "_id": "1",
+        "_genre": "Folk popolare"
+      },
+      {
+        "_id": "0",
+        "_genre": "Psyco"
+      },
+      {
+        "_id": "0",
+        "_genre": "Psyco"
+      },
+      {
+        "_id": "0",
+        "_genre": "Psyco"
       }
     ]
   },
@@ -394,13 +439,7 @@
     "_mail": "kim@mail.it",
     "_sex": "M",
     "_playlist": [],
-    "_followers": [
-      {
-        "_id": "U1613583743602",
-        "_user_name": "Emily",
-        "_sex": "F"
-      }
-    ],
+    "_followers": [],
     "_followed": [],
     "_lastSongsPlayed": []
   }

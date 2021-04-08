@@ -26,7 +26,7 @@ router.get("/", ({params:{id}, query:{offset, limit}}:Request, res:Response) => 
     const currentUser = listOfUsers.find((user: User) => user.id === id)
     if(!currentUser) return res.status(404).json({error: "User not found"})
     if(offset && limit) return res.status(200).json(currentUser.playlist.map((list: Playlist) => ({
-        id: list.id, title: list.title})).slice(Number(offset), Number(offset) + Number(limit)))
+        id: list.id, title: list.title, length: list.songs.length})).slice(Number(offset), Number(offset) + Number(limit)))
     return res.status(200).json(currentUser.playlist.map((list: Playlist) => ({id: list.id, title: list.title, length: list.songs.length})))
 })
 
